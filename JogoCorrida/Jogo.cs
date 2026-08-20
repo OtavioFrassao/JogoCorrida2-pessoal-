@@ -15,21 +15,22 @@ namespace JogoCorrida
         public int Faixa1Fim { get; set; }
         public int Faixa2Inicio { get; set; }
         public int Faixa2Fim { get; set; }
+        public int Vidas { get; set; }
         public int Faixa3Inicio { get; set; }
         public int Faixa3Fim { get; set; }
         public int Faixa4Inicio { get; set; }
         public int Faixa4Fim { get; set; }
+
         public int YMaximo { get; set; } = 50;
-        public int Vidas { get; set; } = 3;
 
         public void IniciaJogo()
         {
             Carro = new Elemento();
             Carro.Tipo = TipoElemento.Carro;
             Carro.PosicaoX = PosicionaObjeto(1);
-            Carro.PosicaoY = YMaximo - 1;
+            Carro.PosicaoY = YMaximo - 100;
 
-            Obstaculos = FabricaObstaculos(200, 5, 10);
+            Obstaculos = FabricaObstaculos(200, 300, 450);
         }
         public List<Elemento> FabricaObstaculos(int qtd, int dmin, int dmax)
         {
@@ -37,9 +38,9 @@ namespace JogoCorrida
             var obstaculos = new List<Elemento>();
             var rnd = new Random();
 
-            for(int i = 0; i < qtd; i++)
+            for (int i = 0; i < qtd; i++)
             {
-                if (i != 0) 
+                if (i != 0)
                     y_incial -= rnd.Next(dmin, dmax);
                 var ob = new Elemento()
                 {
@@ -49,64 +50,64 @@ namespace JogoCorrida
                 ob.PosicaoX = PosicionaObjeto(faixa);
                 ob.PosicaoY = y_incial;
                 obstaculos.Add(ob);
-                
+
             }
             return obstaculos;
 
         }
         public int PosicionaObjeto(int faixa)
         {
-            if(faixa == 1)
+            switch (faixa)
             {
-                return Faixa1Inicio + ((Faixa1Fim - Faixa1Inicio) / 2);
-            }
-            else if(faixa == 2)
-            {
-                return Faixa2Inicio + ((Faixa2Fim - Faixa2Inicio) / 2);
-            }
-            else if( faixa == 3)
-            {
-                return Faixa3Inicio + ((Faixa3Fim - Faixa3Inicio) / 2);
-            }
-            else
-            {
-                return Faixa4Inicio + ((Faixa4Fim - Faixa4Inicio) / 2);
+                case 1: return Faixa1Inicio + ((Faixa1Fim - Faixa1Inicio) / 2);
+                case 2: return Faixa2Inicio + ((Faixa2Fim - Faixa2Inicio) / 2);
+                case 3: return Faixa3Inicio + ((Faixa3Fim - Faixa3Inicio) / 2);
+                case 4: return Faixa4Inicio + ((Faixa4Fim - Faixa4Inicio) / 2);
+                default: return Faixa1Inicio + ((Faixa1Fim - Faixa1Inicio) / 2);
             }
         }
         public void Acelerar(int incremento)
         {
             Velocidade += incremento;
         }
+
+        public void PerdeVida()
+        {
+            Vidas--;
+        }
         private int ChecaFaixaElemento(Elemento elemento)
         {
-            if(elemento.PosicaoX >= Faixa1Inicio && 
+            if (elemento.PosicaoX >= Faixa1Inicio &&
                 elemento.PosicaoX <= Faixa1Fim)
             {
                 return 1;
             }
-            else if(elemento.PosicaoX >=Faixa2Inicio && elemento.PosicaoX < Faixa2Fim)
+            else
             {
                 return 2;
             }
-            else if (elemento.PosicaoX >= Faixa3Inicio && elemento.PosicaoX < Faixa3Fim)
-            {
-                return 3;
-            }
-            else
-            {
-                return 4;
-            }
         }
+
         public bool ChecarColisao()
         {
-            foreach(var ob in Obstaculos)
+            int larguraObjeto = 80;
+            int alturaObjeto = 110;
+
+            int larguraCarro = 80;
+            int alturaCarro = 110;
+
+            foreach (var ob in Obstaculos)
             {
-                if(ChecaFaixaElemento(Carro) == ChecaFaixaElemento(ob))
+                bool bateuX = Carro.PosicaoX < (ob.PosicaoX + larguraObjeto) &&
+                              (Carro.PosicaoX + larguraCarro) > ob.PosicaoX;
+
+                bool bateuY = Carro.PosicaoY < (ob.PosicaoY + alturaObjeto) &&
+                              (Carro.PosicaoY + alturaCarro) > ob.PosicaoY;
+
+                if (bateuX && bateuY)
                 {
-                    if(Math.Abs(Carro.PosicaoY - ob.PosicaoY) <= 1){
-                        ob.PosicaoY = -100;
-                        return true;
-                    }
+                    ob.PosicaoY = -250; 
+                    return true;
                 }
             }
             return false;
@@ -114,30 +115,27 @@ namespace JogoCorrida
 
         public void MovimentaObstaculos()
         {
+            var rnd = new Random();
+
+            int YMaisAlto = 0;
+
+            foreach (var o in Obstaculos)
+            {
+                if (o.PosicaoY < YMaisAlto) YMaisAlto = o.PosicaoY;
+            }
+
             foreach (var ob in Obstaculos)
             {
-                if(ob.PosicaoY == -100)
+                ob.PosicaoY += 10;
+                if (ob.PosicaoY > YMaximo + 150)
                 {
-                    continue;
-                }
-                
-                ob.PosicaoY ++;
+                    ob.PosicaoY = YMaisAlto - rnd.Next(250, 400);
+                    ob.PosicaoX = PosicionaObjeto(rnd.Next(1, 5));
 
-                if(ob.PosicaoY > YMaximo)
-                {
-                    ob.PosicaoY = 0;
+                    YMaisAlto = ob.PosicaoY;
                 }
             }
         }
-
-        public void PerdeVida()
-        {
-            if(Vidas > 0)
-            {
-                Vidas--; 
-            }
-        }
-       
         public bool VerificaFimJogo()
         {
             return true;

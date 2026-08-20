@@ -109,6 +109,8 @@ class Program
         Console.SetCursorPosition(0, 14);
         Console.ReadKey();
     }
+
+
     public static void Desenha_Cenario()
     {
         Console.SetCursorPosition(0, 0);
