@@ -313,6 +313,26 @@ namespace JogoCorridaWinFormsApp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap picEstatisticas {
+            get {
+                object obj = ResourceManager.GetObject("picEstatisticas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picInicio {
+            get {
+                object obj = ResourceManager.GetObject("picInicio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap picObjeto {
             get {
                 object obj = ResourceManager.GetObject("picObjeto", resourceCulture);

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            picLogo = new PictureBox();
             picPersonagem1 = new PictureBox();
             picPersonagem2 = new PictureBox();
             picPersonagem3 = new PictureBox();
@@ -49,7 +49,7 @@
             picPersonagem18 = new PictureBox();
             picPersonagem17 = new PictureBox();
             picPersonagem16 = new PictureBox();
-            pictureBox22 = new PictureBox();
+            picAleatorio = new PictureBox();
             lblPersonagem1 = new Label();
             lblPersonagem2 = new Label();
             lblPersonagem3 = new Label();
@@ -71,7 +71,8 @@
             lblPersonagem17 = new Label();
             lblPersonagem16 = new Label();
             lblAleatorio = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelPrincipal = new Panel();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem3).BeginInit();
@@ -92,26 +93,27 @@
             ((System.ComponentModel.ISupportInitialize)picPersonagem18).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem17).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem16).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox22).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picAleatorio).BeginInit();
+            panelPrincipal.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // picLogo
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = Properties.Resources.LogoStreetCars;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(542, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(365, 151);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            picLogo.BackColor = Color.Transparent;
+            picLogo.BackgroundImage = Properties.Resources.LogoStreetCars;
+            picLogo.BackgroundImageLayout = ImageLayout.Stretch;
+            picLogo.Location = new Point(513, -15);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(395, 168);
+            picLogo.TabIndex = 0;
+            picLogo.TabStop = false;
             // 
             // picPersonagem1
             // 
             picPersonagem1.BackColor = Color.Transparent;
             picPersonagem1.BackgroundImage = Properties.Resources.personagem1;
             picPersonagem1.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem1.Location = new Point(88, 203);
+            picPersonagem1.Location = new Point(34, 203);
             picPersonagem1.Name = "picPersonagem1";
             picPersonagem1.Size = new Size(100, 98);
             picPersonagem1.TabIndex = 1;
@@ -122,7 +124,7 @@
             picPersonagem2.BackColor = Color.Transparent;
             picPersonagem2.BackgroundImage = Properties.Resources.personagem2;
             picPersonagem2.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem2.Location = new Point(193, 203);
+            picPersonagem2.Location = new Point(139, 203);
             picPersonagem2.Name = "picPersonagem2";
             picPersonagem2.Size = new Size(100, 98);
             picPersonagem2.TabIndex = 2;
@@ -133,7 +135,7 @@
             picPersonagem3.BackColor = Color.Transparent;
             picPersonagem3.BackgroundImage = Properties.Resources.personagem3;
             picPersonagem3.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem3.Location = new Point(299, 203);
+            picPersonagem3.Location = new Point(245, 203);
             picPersonagem3.Name = "picPersonagem3";
             picPersonagem3.Size = new Size(100, 98);
             picPersonagem3.TabIndex = 3;
@@ -144,7 +146,7 @@
             picPersonagem4.BackColor = Color.Transparent;
             picPersonagem4.BackgroundImage = Properties.Resources.personagem4;
             picPersonagem4.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem4.Location = new Point(405, 203);
+            picPersonagem4.Location = new Point(351, 203);
             picPersonagem4.Name = "picPersonagem4";
             picPersonagem4.Size = new Size(100, 98);
             picPersonagem4.TabIndex = 4;
@@ -155,7 +157,7 @@
             picPersonagem5.BackColor = Color.Transparent;
             picPersonagem5.BackgroundImage = Properties.Resources.personagem5;
             picPersonagem5.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem5.Location = new Point(511, 203);
+            picPersonagem5.Location = new Point(457, 203);
             picPersonagem5.Name = "picPersonagem5";
             picPersonagem5.Size = new Size(100, 98);
             picPersonagem5.TabIndex = 5;
@@ -166,7 +168,7 @@
             picPersonagem10.BackColor = Color.Transparent;
             picPersonagem10.BackgroundImage = Properties.Resources.personagem10;
             picPersonagem10.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem10.Location = new Point(511, 429);
+            picPersonagem10.Location = new Point(457, 429);
             picPersonagem10.Name = "picPersonagem10";
             picPersonagem10.Size = new Size(100, 98);
             picPersonagem10.TabIndex = 10;
@@ -177,7 +179,7 @@
             picPersonagem9.BackColor = Color.Transparent;
             picPersonagem9.BackgroundImage = Properties.Resources.personagem9;
             picPersonagem9.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem9.Location = new Point(405, 429);
+            picPersonagem9.Location = new Point(351, 429);
             picPersonagem9.Name = "picPersonagem9";
             picPersonagem9.Size = new Size(100, 98);
             picPersonagem9.TabIndex = 9;
@@ -188,7 +190,7 @@
             picPersonagem8.BackColor = Color.Transparent;
             picPersonagem8.BackgroundImage = Properties.Resources.personagem8;
             picPersonagem8.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem8.Location = new Point(299, 429);
+            picPersonagem8.Location = new Point(245, 429);
             picPersonagem8.Name = "picPersonagem8";
             picPersonagem8.Size = new Size(100, 98);
             picPersonagem8.TabIndex = 8;
@@ -199,7 +201,7 @@
             picPersonagem7.BackColor = Color.Transparent;
             picPersonagem7.BackgroundImage = Properties.Resources.personagem7;
             picPersonagem7.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem7.Location = new Point(193, 429);
+            picPersonagem7.Location = new Point(139, 429);
             picPersonagem7.Name = "picPersonagem7";
             picPersonagem7.Size = new Size(100, 98);
             picPersonagem7.TabIndex = 7;
@@ -210,7 +212,7 @@
             picPersonagem6.BackColor = Color.Transparent;
             picPersonagem6.BackgroundImage = Properties.Resources.personagem6;
             picPersonagem6.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem6.Location = new Point(87, 429);
+            picPersonagem6.Location = new Point(33, 429);
             picPersonagem6.Name = "picPersonagem6";
             picPersonagem6.Size = new Size(100, 98);
             picPersonagem6.TabIndex = 6;
@@ -221,7 +223,7 @@
             picPersonagem15.BackColor = Color.Transparent;
             picPersonagem15.BackgroundImage = Properties.Resources.personagem15;
             picPersonagem15.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem15.Location = new Point(1253, 203);
+            picPersonagem15.Location = new Point(1282, 203);
             picPersonagem15.Name = "picPersonagem15";
             picPersonagem15.Size = new Size(100, 98);
             picPersonagem15.TabIndex = 15;
@@ -232,7 +234,7 @@
             picPersonagem14.BackColor = Color.Transparent;
             picPersonagem14.BackgroundImage = Properties.Resources.personagem14;
             picPersonagem14.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem14.Location = new Point(1147, 203);
+            picPersonagem14.Location = new Point(1176, 203);
             picPersonagem14.Name = "picPersonagem14";
             picPersonagem14.Size = new Size(100, 98);
             picPersonagem14.TabIndex = 14;
@@ -243,7 +245,7 @@
             picPersonagem13.BackColor = Color.Transparent;
             picPersonagem13.BackgroundImage = Properties.Resources.personagem13;
             picPersonagem13.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem13.Location = new Point(1041, 203);
+            picPersonagem13.Location = new Point(1070, 203);
             picPersonagem13.Name = "picPersonagem13";
             picPersonagem13.Size = new Size(100, 98);
             picPersonagem13.TabIndex = 13;
@@ -254,7 +256,7 @@
             picPersonagem12.BackColor = Color.Transparent;
             picPersonagem12.BackgroundImage = Properties.Resources.personagem12;
             picPersonagem12.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem12.Location = new Point(935, 203);
+            picPersonagem12.Location = new Point(964, 203);
             picPersonagem12.Name = "picPersonagem12";
             picPersonagem12.Size = new Size(100, 98);
             picPersonagem12.TabIndex = 12;
@@ -265,7 +267,7 @@
             picPersonagem11.BackColor = Color.Transparent;
             picPersonagem11.BackgroundImage = Properties.Resources.personagem11;
             picPersonagem11.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem11.Location = new Point(829, 203);
+            picPersonagem11.Location = new Point(858, 203);
             picPersonagem11.Name = "picPersonagem11";
             picPersonagem11.Size = new Size(100, 98);
             picPersonagem11.TabIndex = 11;
@@ -276,7 +278,7 @@
             picPersonagem20.BackColor = Color.Transparent;
             picPersonagem20.BackgroundImage = Properties.Resources.personagem20;
             picPersonagem20.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem20.Location = new Point(1253, 429);
+            picPersonagem20.Location = new Point(1282, 429);
             picPersonagem20.Name = "picPersonagem20";
             picPersonagem20.Size = new Size(100, 98);
             picPersonagem20.TabIndex = 20;
@@ -287,7 +289,7 @@
             picPersonagem19.BackColor = Color.Transparent;
             picPersonagem19.BackgroundImage = Properties.Resources.personagem19;
             picPersonagem19.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem19.Location = new Point(1147, 429);
+            picPersonagem19.Location = new Point(1176, 429);
             picPersonagem19.Name = "picPersonagem19";
             picPersonagem19.Size = new Size(100, 98);
             picPersonagem19.TabIndex = 19;
@@ -298,7 +300,7 @@
             picPersonagem18.BackColor = Color.Transparent;
             picPersonagem18.BackgroundImage = Properties.Resources.personagem18;
             picPersonagem18.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem18.Location = new Point(1041, 429);
+            picPersonagem18.Location = new Point(1070, 429);
             picPersonagem18.Name = "picPersonagem18";
             picPersonagem18.Size = new Size(100, 98);
             picPersonagem18.TabIndex = 18;
@@ -309,7 +311,7 @@
             picPersonagem17.BackColor = Color.Transparent;
             picPersonagem17.BackgroundImage = Properties.Resources.personagem17;
             picPersonagem17.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem17.Location = new Point(935, 429);
+            picPersonagem17.Location = new Point(964, 429);
             picPersonagem17.Name = "picPersonagem17";
             picPersonagem17.Size = new Size(100, 98);
             picPersonagem17.TabIndex = 17;
@@ -320,22 +322,22 @@
             picPersonagem16.BackColor = Color.Transparent;
             picPersonagem16.BackgroundImage = Properties.Resources.personagem161;
             picPersonagem16.BackgroundImageLayout = ImageLayout.Stretch;
-            picPersonagem16.Location = new Point(829, 429);
+            picPersonagem16.Location = new Point(858, 429);
             picPersonagem16.Name = "picPersonagem16";
             picPersonagem16.Size = new Size(100, 98);
             picPersonagem16.TabIndex = 16;
             picPersonagem16.TabStop = false;
             // 
-            // pictureBox22
+            // picAleatorio
             // 
-            pictureBox22.BackColor = Color.Transparent;
-            pictureBox22.BackgroundImage = Properties.Resources.aleatorio;
-            pictureBox22.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox22.Location = new Point(679, 317);
-            pictureBox22.Name = "pictureBox22";
-            pictureBox22.Size = new Size(100, 98);
-            pictureBox22.TabIndex = 21;
-            pictureBox22.TabStop = false;
+            picAleatorio.BackColor = Color.Transparent;
+            picAleatorio.BackgroundImage = Properties.Resources.aleatorio;
+            picAleatorio.BackgroundImageLayout = ImageLayout.Stretch;
+            picAleatorio.Location = new Point(659, 304);
+            picAleatorio.Name = "picAleatorio";
+            picAleatorio.Size = new Size(100, 98);
+            picAleatorio.TabIndex = 21;
+            picAleatorio.TabStop = false;
             // 
             // lblPersonagem1
             // 
@@ -343,7 +345,7 @@
             lblPersonagem1.BackColor = Color.Transparent;
             lblPersonagem1.Font = new Font("Segoe UI", 15F);
             lblPersonagem1.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem1.Location = new Point(119, 317);
+            lblPersonagem1.Location = new Point(65, 317);
             lblPersonagem1.Name = "lblPersonagem1";
             lblPersonagem1.Size = new Size(49, 28);
             lblPersonagem1.TabIndex = 22;
@@ -355,7 +357,7 @@
             lblPersonagem2.BackColor = Color.Transparent;
             lblPersonagem2.Font = new Font("Segoe UI", 15F);
             lblPersonagem2.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem2.Location = new Point(193, 317);
+            lblPersonagem2.Location = new Point(139, 317);
             lblPersonagem2.Name = "lblPersonagem2";
             lblPersonagem2.Size = new Size(89, 28);
             lblPersonagem2.TabIndex = 23;
@@ -367,7 +369,7 @@
             lblPersonagem3.BackColor = Color.Transparent;
             lblPersonagem3.Font = new Font("Segoe UI", 15F);
             lblPersonagem3.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem3.Location = new Point(316, 317);
+            lblPersonagem3.Location = new Point(262, 317);
             lblPersonagem3.Name = "lblPersonagem3";
             lblPersonagem3.Size = new Size(65, 28);
             lblPersonagem3.TabIndex = 24;
@@ -379,7 +381,7 @@
             lblPersonagem4.BackColor = Color.Transparent;
             lblPersonagem4.Font = new Font("Segoe UI", 15F);
             lblPersonagem4.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem4.Location = new Point(409, 317);
+            lblPersonagem4.Location = new Point(355, 317);
             lblPersonagem4.Name = "lblPersonagem4";
             lblPersonagem4.Size = new Size(96, 28);
             lblPersonagem4.TabIndex = 25;
@@ -391,7 +393,7 @@
             lblPersonagem5.BackColor = Color.Transparent;
             lblPersonagem5.Font = new Font("Segoe UI", 15F);
             lblPersonagem5.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem5.Location = new Point(501, 317);
+            lblPersonagem5.Location = new Point(447, 317);
             lblPersonagem5.Name = "lblPersonagem5";
             lblPersonagem5.Size = new Size(131, 28);
             lblPersonagem5.TabIndex = 26;
@@ -403,7 +405,7 @@
             lblPersonagem10.BackColor = Color.Transparent;
             lblPersonagem10.Font = new Font("Segoe UI", 15F);
             lblPersonagem10.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem10.Location = new Point(527, 543);
+            lblPersonagem10.Location = new Point(473, 543);
             lblPersonagem10.Name = "lblPersonagem10";
             lblPersonagem10.Size = new Size(69, 28);
             lblPersonagem10.TabIndex = 31;
@@ -415,7 +417,7 @@
             lblPersonagem9.BackColor = Color.Transparent;
             lblPersonagem9.Font = new Font("Segoe UI", 15F);
             lblPersonagem9.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem9.Location = new Point(409, 543);
+            lblPersonagem9.Location = new Point(355, 543);
             lblPersonagem9.Name = "lblPersonagem9";
             lblPersonagem9.Size = new Size(96, 28);
             lblPersonagem9.TabIndex = 30;
@@ -427,7 +429,7 @@
             lblPersonagem8.BackColor = Color.Transparent;
             lblPersonagem8.Font = new Font("Segoe UI", 15F);
             lblPersonagem8.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem8.Location = new Point(299, 543);
+            lblPersonagem8.Location = new Point(245, 543);
             lblPersonagem8.Name = "lblPersonagem8";
             lblPersonagem8.Size = new Size(90, 28);
             lblPersonagem8.TabIndex = 29;
@@ -439,7 +441,7 @@
             lblPersonagem7.BackColor = Color.Transparent;
             lblPersonagem7.Font = new Font("Segoe UI", 15F);
             lblPersonagem7.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem7.Location = new Point(211, 543);
+            lblPersonagem7.Location = new Point(157, 543);
             lblPersonagem7.Name = "lblPersonagem7";
             lblPersonagem7.Size = new Size(61, 28);
             lblPersonagem7.TabIndex = 28;
@@ -451,7 +453,7 @@
             lblPersonagem6.BackColor = Color.Transparent;
             lblPersonagem6.Font = new Font("Segoe UI", 15F);
             lblPersonagem6.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem6.Location = new Point(103, 543);
+            lblPersonagem6.Location = new Point(49, 543);
             lblPersonagem6.Name = "lblPersonagem6";
             lblPersonagem6.Size = new Size(85, 28);
             lblPersonagem6.TabIndex = 27;
@@ -463,7 +465,7 @@
             lblPersonagem15.BackColor = Color.Transparent;
             lblPersonagem15.Font = new Font("Segoe UI", 15F);
             lblPersonagem15.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem15.Location = new Point(1253, 317);
+            lblPersonagem15.Location = new Point(1282, 317);
             lblPersonagem15.Name = "lblPersonagem15";
             lblPersonagem15.Size = new Size(86, 28);
             lblPersonagem15.TabIndex = 36;
@@ -475,7 +477,7 @@
             lblPersonagem14.BackColor = Color.Transparent;
             lblPersonagem14.Font = new Font("Segoe UI", 15F);
             lblPersonagem14.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem14.Location = new Point(1161, 317);
+            lblPersonagem14.Location = new Point(1190, 317);
             lblPersonagem14.Name = "lblPersonagem14";
             lblPersonagem14.Size = new Size(67, 28);
             lblPersonagem14.TabIndex = 35;
@@ -487,7 +489,7 @@
             lblPersonagem13.BackColor = Color.Transparent;
             lblPersonagem13.Font = new Font("Segoe UI", 15F);
             lblPersonagem13.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem13.Location = new Point(1057, 317);
+            lblPersonagem13.Location = new Point(1086, 317);
             lblPersonagem13.Name = "lblPersonagem13";
             lblPersonagem13.Size = new Size(82, 28);
             lblPersonagem13.TabIndex = 34;
@@ -499,7 +501,7 @@
             lblPersonagem12.BackColor = Color.Transparent;
             lblPersonagem12.Font = new Font("Segoe UI", 15F);
             lblPersonagem12.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem12.Location = new Point(962, 317);
+            lblPersonagem12.Location = new Point(991, 317);
             lblPersonagem12.Name = "lblPersonagem12";
             lblPersonagem12.Size = new Size(50, 28);
             lblPersonagem12.TabIndex = 33;
@@ -511,7 +513,7 @@
             lblPersonagem11.BackColor = Color.Transparent;
             lblPersonagem11.Font = new Font("Segoe UI", 15F);
             lblPersonagem11.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem11.Location = new Point(844, 317);
+            lblPersonagem11.Location = new Point(873, 317);
             lblPersonagem11.Name = "lblPersonagem11";
             lblPersonagem11.Size = new Size(59, 28);
             lblPersonagem11.TabIndex = 32;
@@ -523,7 +525,7 @@
             lblPersonagem20.BackColor = Color.Transparent;
             lblPersonagem20.Font = new Font("Segoe UI", 15F);
             lblPersonagem20.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem20.Location = new Point(1270, 543);
+            lblPersonagem20.Location = new Point(1299, 543);
             lblPersonagem20.Name = "lblPersonagem20";
             lblPersonagem20.Size = new Size(59, 28);
             lblPersonagem20.TabIndex = 41;
@@ -535,7 +537,7 @@
             lblPersonagem19.BackColor = Color.Transparent;
             lblPersonagem19.Font = new Font("Segoe UI", 15F);
             lblPersonagem19.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem19.Location = new Point(1172, 543);
+            lblPersonagem19.Location = new Point(1201, 543);
             lblPersonagem19.Name = "lblPersonagem19";
             lblPersonagem19.Size = new Size(65, 28);
             lblPersonagem19.TabIndex = 40;
@@ -547,7 +549,7 @@
             lblPersonagem18.BackColor = Color.Transparent;
             lblPersonagem18.Font = new Font("Segoe UI", 15F);
             lblPersonagem18.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem18.Location = new Point(1057, 543);
+            lblPersonagem18.Location = new Point(1086, 543);
             lblPersonagem18.Name = "lblPersonagem18";
             lblPersonagem18.Size = new Size(87, 28);
             lblPersonagem18.TabIndex = 39;
@@ -559,7 +561,7 @@
             lblPersonagem17.BackColor = Color.Transparent;
             lblPersonagem17.Font = new Font("Segoe UI", 15F);
             lblPersonagem17.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem17.Location = new Point(963, 543);
+            lblPersonagem17.Location = new Point(992, 543);
             lblPersonagem17.Name = "lblPersonagem17";
             lblPersonagem17.Size = new Size(49, 28);
             lblPersonagem17.TabIndex = 38;
@@ -571,7 +573,7 @@
             lblPersonagem16.BackColor = Color.Transparent;
             lblPersonagem16.Font = new Font("Segoe UI", 15F);
             lblPersonagem16.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem16.Location = new Point(829, 543);
+            lblPersonagem16.Location = new Point(858, 543);
             lblPersonagem16.Name = "lblPersonagem16";
             lblPersonagem16.Size = new Size(102, 28);
             lblPersonagem16.TabIndex = 37;
@@ -583,11 +585,63 @@
             lblAleatorio.BackColor = Color.Transparent;
             lblAleatorio.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAleatorio.ForeColor = SystemColors.ControlLightLight;
-            lblAleatorio.Location = new Point(664, 429);
+            lblAleatorio.Location = new Point(647, 416);
             lblAleatorio.Name = "lblAleatorio";
             lblAleatorio.Size = new Size(133, 28);
             lblAleatorio.TabIndex = 42;
             lblAleatorio.Text = "ALEATORIO";
+            // 
+            // panelPrincipal
+            // 
+            panelPrincipal.Anchor = AnchorStyles.None;
+            panelPrincipal.BackColor = Color.Transparent;
+            panelPrincipal.Controls.Add(picLogo);
+            panelPrincipal.Controls.Add(picPersonagem1);
+            panelPrincipal.Controls.Add(picPersonagem2);
+            panelPrincipal.Controls.Add(picPersonagem3);
+            panelPrincipal.Controls.Add(picPersonagem4);
+            panelPrincipal.Controls.Add(picPersonagem5);
+            panelPrincipal.Controls.Add(picPersonagem6);
+            panelPrincipal.Controls.Add(picPersonagem7);
+            panelPrincipal.Controls.Add(picPersonagem8);
+            panelPrincipal.Controls.Add(picPersonagem9);
+            panelPrincipal.Controls.Add(picPersonagem10);
+            panelPrincipal.Controls.Add(picPersonagem11);
+            panelPrincipal.Controls.Add(picPersonagem12);
+            panelPrincipal.Controls.Add(picPersonagem13);
+            panelPrincipal.Controls.Add(picPersonagem14);
+            panelPrincipal.Controls.Add(picPersonagem15);
+            panelPrincipal.Controls.Add(picPersonagem16);
+            panelPrincipal.Controls.Add(picPersonagem17);
+            panelPrincipal.Controls.Add(picPersonagem18);
+            panelPrincipal.Controls.Add(picPersonagem19);
+            panelPrincipal.Controls.Add(picPersonagem20);
+            panelPrincipal.Controls.Add(picAleatorio);
+            panelPrincipal.Controls.Add(lblPersonagem1);
+            panelPrincipal.Controls.Add(lblPersonagem2);
+            panelPrincipal.Controls.Add(lblPersonagem3);
+            panelPrincipal.Controls.Add(lblPersonagem4);
+            panelPrincipal.Controls.Add(lblPersonagem5);
+            panelPrincipal.Controls.Add(lblPersonagem6);
+            panelPrincipal.Controls.Add(lblPersonagem7);
+            panelPrincipal.Controls.Add(lblPersonagem8);
+            panelPrincipal.Controls.Add(lblPersonagem9);
+            panelPrincipal.Controls.Add(lblPersonagem10);
+            panelPrincipal.Controls.Add(lblPersonagem11);
+            panelPrincipal.Controls.Add(lblPersonagem12);
+            panelPrincipal.Controls.Add(lblPersonagem13);
+            panelPrincipal.Controls.Add(lblPersonagem14);
+            panelPrincipal.Controls.Add(lblPersonagem15);
+            panelPrincipal.Controls.Add(lblPersonagem16);
+            panelPrincipal.Controls.Add(lblPersonagem17);
+            panelPrincipal.Controls.Add(lblPersonagem18);
+            panelPrincipal.Controls.Add(lblPersonagem19);
+            panelPrincipal.Controls.Add(lblPersonagem20);
+            panelPrincipal.Controls.Add(lblAleatorio);
+            panelPrincipal.Location = new Point(12, 12);
+            panelPrincipal.Name = "panelPrincipal";
+            panelPrincipal.Size = new Size(1414, 597);
+            panelPrincipal.TabIndex = 43;
             // 
             // TelaInicioJogoCorrida
             // 
@@ -596,52 +650,10 @@
             BackgroundImage = Properties.Resources.FundoStreetCars;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1438, 634);
-            Controls.Add(lblAleatorio);
-            Controls.Add(lblPersonagem20);
-            Controls.Add(lblPersonagem19);
-            Controls.Add(lblPersonagem18);
-            Controls.Add(lblPersonagem17);
-            Controls.Add(lblPersonagem16);
-            Controls.Add(lblPersonagem15);
-            Controls.Add(lblPersonagem14);
-            Controls.Add(lblPersonagem13);
-            Controls.Add(lblPersonagem12);
-            Controls.Add(lblPersonagem11);
-            Controls.Add(lblPersonagem10);
-            Controls.Add(lblPersonagem9);
-            Controls.Add(lblPersonagem8);
-            Controls.Add(lblPersonagem7);
-            Controls.Add(lblPersonagem6);
-            Controls.Add(lblPersonagem5);
-            Controls.Add(lblPersonagem4);
-            Controls.Add(lblPersonagem3);
-            Controls.Add(lblPersonagem2);
-            Controls.Add(lblPersonagem1);
-            Controls.Add(pictureBox22);
-            Controls.Add(picPersonagem20);
-            Controls.Add(picPersonagem19);
-            Controls.Add(picPersonagem18);
-            Controls.Add(picPersonagem17);
-            Controls.Add(picPersonagem16);
-            Controls.Add(picPersonagem15);
-            Controls.Add(picPersonagem14);
-            Controls.Add(picPersonagem13);
-            Controls.Add(picPersonagem12);
-            Controls.Add(picPersonagem11);
-            Controls.Add(picPersonagem10);
-            Controls.Add(picPersonagem9);
-            Controls.Add(picPersonagem8);
-            Controls.Add(picPersonagem7);
-            Controls.Add(picPersonagem6);
-            Controls.Add(picPersonagem5);
-            Controls.Add(picPersonagem4);
-            Controls.Add(picPersonagem3);
-            Controls.Add(picPersonagem2);
-            Controls.Add(picPersonagem1);
-            Controls.Add(pictureBox1);
+            Controls.Add(panelPrincipal);
             Name = "TelaInicioJogoCorrida";
             Text = "TelaInicioJogoCorrida";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem3).EndInit();
@@ -662,9 +674,10 @@
             ((System.ComponentModel.ISupportInitialize)picPersonagem18).EndInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem17).EndInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem16).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox22).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picAleatorio).EndInit();
+            panelPrincipal.ResumeLayout(false);
+            panelPrincipal.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -690,7 +703,7 @@
         private PictureBox picPersonagem18;
         private PictureBox picPersonagem17;
         private PictureBox picPersonagem16;
-        private PictureBox pictureBox22;
+        private PictureBox picAleatorio;
         private Label lblPersonagem1;
         private Label lblPersonagem2;
         private Label lblPersonagem3;
@@ -712,5 +725,7 @@
         private Label lblPersonagem17;
         private Label lblPersonagem16;
         private Label lblAleatorio;
+        private Panel panelPrincipal;
+        private PictureBox picLogo;
     }
 }
