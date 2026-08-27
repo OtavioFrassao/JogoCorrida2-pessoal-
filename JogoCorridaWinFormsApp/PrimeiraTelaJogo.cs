@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace JogoCorridaWinFormsApp
 {
@@ -107,6 +108,11 @@ namespace JogoCorridaWinFormsApp
                 ConfirmarSelecao(listaBotoes[indiceSelecionado]);
                 return true;
             }
+            else if (keyData == Keys.Escape) 
+            {
+                Application.Exit();
+                return true;
+            }
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -122,7 +128,7 @@ namespace JogoCorridaWinFormsApp
         {
             if (selecionado.Name == "picInicio")
             {
-                TelaInicioJogoCorrida telaSelecao = new TelaInicioJogoCorrida();
+                TelaEscolhaJogoCorrida telaSelecao = new TelaEscolhaJogoCorrida();
                 telaSelecao.Show();
                 this.Hide();
             }
@@ -132,6 +138,16 @@ namespace JogoCorridaWinFormsApp
                 telaSelecao.Show();
                 this.Hide();
             }
+            else if (selecionado.Name == "picSair")
+            {
+                Application.Exit();
+            }
+        }
+
+        private void PicSair_Click(object sender, EventArgs e)
+        {
+            // Encerra completamente o jogo
+            Application.Exit();
         }
 
     }

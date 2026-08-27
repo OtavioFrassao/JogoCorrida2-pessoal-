@@ -29,19 +29,60 @@
         private void InitializeComponent()
         {
             panelPrincipal3 = new Panel();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             picLogo = new PictureBox();
+            picSair = new PictureBox();
             panelPrincipal3.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picSair).BeginInit();
             SuspendLayout();
             // 
             // panelPrincipal3
             // 
             panelPrincipal3.BackColor = Color.Transparent;
+            panelPrincipal3.Controls.Add(panel1);
             panelPrincipal3.Controls.Add(picLogo);
             panelPrincipal3.Location = new Point(12, 12);
             panelPrincipal3.Name = "panelPrincipal3";
             panelPrincipal3.Size = new Size(1304, 604);
             panelPrincipal3.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(picSair);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Location = new Point(8, 8);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1304, 604);
+            panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.LogoStreetCars;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(456, -15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(395, 168);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = Properties.Resources.EstatisticaImagem1;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(140, 86);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(1036, 592);
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
             // 
             // picLogo
             // 
@@ -54,6 +95,16 @@
             picLogo.TabIndex = 2;
             picLogo.TabStop = false;
             // 
+            // picSair
+            // 
+            picSair.BackgroundImage = Properties.Resources.picSair;
+            picSair.BackgroundImageLayout = ImageLayout.Stretch;
+            picSair.Location = new Point(1158, 12);
+            picSair.Name = "picSair";
+            picSair.Size = new Size(125, 54);
+            picSair.TabIndex = 44;
+            picSair.TabStop = false;
+            // 
             // TelaEstatisticaJogoCorrida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -62,10 +113,15 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1328, 628);
             Controls.Add(panelPrincipal3);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "TelaEstatisticaJogoCorrida";
             Text = "TelaEstatisticaJogoCorrida";
             panelPrincipal3.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picSair).EndInit();
             ResumeLayout(false);
         }
 
@@ -73,5 +129,9 @@
 
         private Panel panelPrincipal3;
         private PictureBox picLogo;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox picSair;
     }
 }

@@ -32,10 +32,12 @@
             panelPrincipal2 = new Panel();
             picEstatisticas = new PictureBox();
             picInicio = new PictureBox();
+            picSair = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             panelPrincipal2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picEstatisticas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picInicio).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picSair).BeginInit();
             SuspendLayout();
             // 
             // picLogo
@@ -52,6 +54,7 @@
             // panelPrincipal2
             // 
             panelPrincipal2.BackColor = Color.Transparent;
+            panelPrincipal2.Controls.Add(picSair);
             panelPrincipal2.Controls.Add(picEstatisticas);
             panelPrincipal2.Controls.Add(picInicio);
             panelPrincipal2.Controls.Add(picLogo);
@@ -82,6 +85,17 @@
             picInicio.TabIndex = 2;
             picInicio.TabStop = false;
             // 
+            // picSair
+            // 
+            picSair.BackColor = Color.FromArgb(100, 0, 0, 0);
+            picSair.BackgroundImage = Properties.Resources.picSair;
+            picSair.BackgroundImageLayout = ImageLayout.Stretch;
+            picSair.Location = new Point(600, 482);
+            picSair.Name = "picSair";
+            picSair.Size = new Size(269, 114);
+            picSair.TabIndex = 44;
+            picSair.TabStop = false;
+            // 
             // PrimeiraTelaJogo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -91,12 +105,14 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1439, 641);
             Controls.Add(panelPrincipal2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "PrimeiraTelaJogo";
             Text = "PrimeiraTelaJogo";
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             panelPrincipal2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picEstatisticas).EndInit();
             ((System.ComponentModel.ISupportInitialize)picInicio).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picSair).EndInit();
             ResumeLayout(false);
         }
 
@@ -106,5 +122,6 @@
         private Panel panelPrincipal2;
         private PictureBox picEstatisticas;
         private PictureBox picInicio;
+        private PictureBox picSair;
     }
 }

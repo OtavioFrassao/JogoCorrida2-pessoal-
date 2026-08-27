@@ -72,6 +72,7 @@
             lblPersonagem16 = new Label();
             lblAleatorio = new Label();
             panelPrincipal = new Panel();
+            picSair = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPersonagem2).BeginInit();
@@ -95,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)picPersonagem16).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picAleatorio).BeginInit();
             panelPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picSair).BeginInit();
             SuspendLayout();
             // 
             // picLogo
@@ -343,11 +345,11 @@
             // 
             lblPersonagem1.AutoSize = true;
             lblPersonagem1.BackColor = Color.Transparent;
-            lblPersonagem1.Font = new Font("Segoe UI", 15F);
+            lblPersonagem1.Font = new Font("Comic Sans MS", 15F);
             lblPersonagem1.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem1.Location = new Point(65, 317);
+            lblPersonagem1.Location = new Point(57, 317);
             lblPersonagem1.Name = "lblPersonagem1";
-            lblPersonagem1.Size = new Size(49, 28);
+            lblPersonagem1.Size = new Size(53, 28);
             lblPersonagem1.TabIndex = 22;
             lblPersonagem1.Text = "RYU";
             // 
@@ -355,11 +357,11 @@
             // 
             lblPersonagem2.AutoSize = true;
             lblPersonagem2.BackColor = Color.Transparent;
-            lblPersonagem2.Font = new Font("Segoe UI", 15F);
+            lblPersonagem2.Font = new Font("Comic Sans MS", 15F);
             lblPersonagem2.ForeColor = SystemColors.ControlLightLight;
             lblPersonagem2.Location = new Point(139, 317);
             lblPersonagem2.Name = "lblPersonagem2";
-            lblPersonagem2.Size = new Size(89, 28);
+            lblPersonagem2.Size = new Size(100, 28);
             lblPersonagem2.TabIndex = 23;
             lblPersonagem2.Text = "CHUN-LI";
             // 
@@ -367,11 +369,11 @@
             // 
             lblPersonagem3.AutoSize = true;
             lblPersonagem3.BackColor = Color.Transparent;
-            lblPersonagem3.Font = new Font("Segoe UI", 15F);
-            lblPersonagem3.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem3.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem3.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem3.Location = new Point(262, 317);
             lblPersonagem3.Name = "lblPersonagem3";
-            lblPersonagem3.Size = new Size(65, 28);
+            lblPersonagem3.Size = new Size(71, 28);
             lblPersonagem3.TabIndex = 24;
             lblPersonagem3.Text = "NASH";
             // 
@@ -379,11 +381,11 @@
             // 
             lblPersonagem4.AutoSize = true;
             lblPersonagem4.BackColor = Color.Transparent;
-            lblPersonagem4.Font = new Font("Segoe UI", 15F);
-            lblPersonagem4.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem4.Location = new Point(355, 317);
+            lblPersonagem4.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem4.ForeColor = SystemColors.ButtonHighlight;
+            lblPersonagem4.Location = new Point(351, 317);
             lblPersonagem4.Name = "lblPersonagem4";
-            lblPersonagem4.Size = new Size(96, 28);
+            lblPersonagem4.Size = new Size(110, 28);
             lblPersonagem4.TabIndex = 25;
             lblPersonagem4.Text = "M. BISON";
             // 
@@ -391,11 +393,11 @@
             // 
             lblPersonagem5.AutoSize = true;
             lblPersonagem5.BackColor = Color.Transparent;
-            lblPersonagem5.Font = new Font("Segoe UI", 15F);
-            lblPersonagem5.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem5.Location = new Point(447, 317);
+            lblPersonagem5.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem5.ForeColor = SystemColors.ButtonHighlight;
+            lblPersonagem5.Location = new Point(457, 317);
             lblPersonagem5.Name = "lblPersonagem5";
-            lblPersonagem5.Size = new Size(131, 28);
+            lblPersonagem5.Size = new Size(149, 28);
             lblPersonagem5.TabIndex = 26;
             lblPersonagem5.Text = "PASSARINHO";
             // 
@@ -403,11 +405,11 @@
             // 
             lblPersonagem10.AutoSize = true;
             lblPersonagem10.BackColor = Color.Transparent;
-            lblPersonagem10.Font = new Font("Segoe UI", 15F);
-            lblPersonagem10.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem10.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem10.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem10.Location = new Point(473, 543);
             lblPersonagem10.Name = "lblPersonagem10";
-            lblPersonagem10.Size = new Size(69, 28);
+            lblPersonagem10.Size = new Size(75, 28);
             lblPersonagem10.TabIndex = 31;
             lblPersonagem10.Text = "PRESA";
             // 
@@ -415,11 +417,11 @@
             // 
             lblPersonagem9.AutoSize = true;
             lblPersonagem9.BackColor = Color.Transparent;
-            lblPersonagem9.Font = new Font("Segoe UI", 15F);
-            lblPersonagem9.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem9.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem9.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem9.Location = new Point(355, 543);
             lblPersonagem9.Name = "lblPersonagem9";
-            lblPersonagem9.Size = new Size(96, 28);
+            lblPersonagem9.Size = new Size(109, 28);
             lblPersonagem9.TabIndex = 30;
             lblPersonagem9.Text = "DHALSIM";
             // 
@@ -427,11 +429,11 @@
             // 
             lblPersonagem8.AutoSize = true;
             lblPersonagem8.BackColor = Color.Transparent;
-            lblPersonagem8.Font = new Font("Segoe UI", 15F);
-            lblPersonagem8.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem8.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem8.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem8.Location = new Point(245, 543);
             lblPersonagem8.Name = "lblPersonagem8";
-            lblPersonagem8.Size = new Size(90, 28);
+            lblPersonagem8.Size = new Size(105, 28);
             lblPersonagem8.TabIndex = 29;
             lblPersonagem8.Text = "ZANGIEF";
             // 
@@ -439,11 +441,11 @@
             // 
             lblPersonagem7.AutoSize = true;
             lblPersonagem7.BackColor = Color.Transparent;
-            lblPersonagem7.Font = new Font("Segoe UI", 15F);
-            lblPersonagem7.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem7.Location = new Point(157, 543);
+            lblPersonagem7.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem7.ForeColor = SystemColors.ButtonHighlight;
+            lblPersonagem7.Location = new Point(153, 543);
             lblPersonagem7.Name = "lblPersonagem7";
-            lblPersonagem7.Size = new Size(61, 28);
+            lblPersonagem7.Size = new Size(65, 28);
             lblPersonagem7.TabIndex = 28;
             lblPersonagem7.Text = "VEGA";
             // 
@@ -451,11 +453,11 @@
             // 
             lblPersonagem6.AutoSize = true;
             lblPersonagem6.BackColor = Color.Transparent;
-            lblPersonagem6.Font = new Font("Segoe UI", 15F);
-            lblPersonagem6.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem6.Location = new Point(49, 543);
+            lblPersonagem6.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem6.ForeColor = SystemColors.ButtonHighlight;
+            lblPersonagem6.Location = new Point(35, 543);
             lblPersonagem6.Name = "lblPersonagem6";
-            lblPersonagem6.Size = new Size(85, 28);
+            lblPersonagem6.Size = new Size(99, 28);
             lblPersonagem6.TabIndex = 27;
             lblPersonagem6.Text = "NECALLI";
             // 
@@ -463,11 +465,11 @@
             // 
             lblPersonagem15.AutoSize = true;
             lblPersonagem15.BackColor = Color.Transparent;
-            lblPersonagem15.Font = new Font("Segoe UI", 15F);
-            lblPersonagem15.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem15.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem15.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem15.Location = new Point(1282, 317);
             lblPersonagem15.Name = "lblPersonagem15";
-            lblPersonagem15.Size = new Size(86, 28);
+            lblPersonagem15.Size = new Size(92, 28);
             lblPersonagem15.TabIndex = 36;
             lblPersonagem15.Text = "BLANKA";
             // 
@@ -475,11 +477,11 @@
             // 
             lblPersonagem14.AutoSize = true;
             lblPersonagem14.BackColor = Color.Transparent;
-            lblPersonagem14.Font = new Font("Segoe UI", 15F);
-            lblPersonagem14.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem14.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem14.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem14.Location = new Point(1190, 317);
             lblPersonagem14.Name = "lblPersonagem14";
-            lblPersonagem14.Size = new Size(67, 28);
+            lblPersonagem14.Size = new Size(78, 28);
             lblPersonagem14.TabIndex = 35;
             lblPersonagem14.Text = "KOLIN";
             // 
@@ -487,11 +489,11 @@
             // 
             lblPersonagem13.AutoSize = true;
             lblPersonagem13.BackColor = Color.Transparent;
-            lblPersonagem13.Font = new Font("Segoe UI", 15F);
-            lblPersonagem13.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem13.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem13.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem13.Location = new Point(1086, 317);
             lblPersonagem13.Name = "lblPersonagem13";
-            lblPersonagem13.Size = new Size(82, 28);
+            lblPersonagem13.Size = new Size(85, 28);
             lblPersonagem13.TabIndex = 34;
             lblPersonagem13.Text = "AKUMA";
             // 
@@ -499,11 +501,11 @@
             // 
             lblPersonagem12.AutoSize = true;
             lblPersonagem12.BackColor = Color.Transparent;
-            lblPersonagem12.Font = new Font("Segoe UI", 15F);
-            lblPersonagem12.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem12.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem12.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem12.Location = new Point(991, 317);
             lblPersonagem12.Name = "lblPersonagem12";
-            lblPersonagem12.Size = new Size(50, 28);
+            lblPersonagem12.Size = new Size(64, 28);
             lblPersonagem12.TabIndex = 33;
             lblPersonagem12.Text = "JURI";
             // 
@@ -511,11 +513,11 @@
             // 
             lblPersonagem11.AutoSize = true;
             lblPersonagem11.BackColor = Color.Transparent;
-            lblPersonagem11.Font = new Font("Segoe UI", 15F);
-            lblPersonagem11.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem11.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem11.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem11.Location = new Point(873, 317);
             lblPersonagem11.Name = "lblPersonagem11";
-            lblPersonagem11.Size = new Size(59, 28);
+            lblPersonagem11.Size = new Size(74, 28);
             lblPersonagem11.TabIndex = 32;
             lblPersonagem11.Text = "IBUKI";
             // 
@@ -523,11 +525,11 @@
             // 
             lblPersonagem20.AutoSize = true;
             lblPersonagem20.BackColor = Color.Transparent;
-            lblPersonagem20.Font = new Font("Segoe UI", 15F);
-            lblPersonagem20.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem20.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem20.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem20.Location = new Point(1299, 543);
             lblPersonagem20.Name = "lblPersonagem20";
-            lblPersonagem20.Size = new Size(59, 28);
+            lblPersonagem20.Size = new Size(65, 28);
             lblPersonagem20.TabIndex = 41;
             lblPersonagem20.Text = "ZEKU";
             // 
@@ -535,11 +537,11 @@
             // 
             lblPersonagem19.AutoSize = true;
             lblPersonagem19.BackColor = Color.Transparent;
-            lblPersonagem19.Font = new Font("Segoe UI", 15F);
-            lblPersonagem19.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem19.Location = new Point(1201, 543);
+            lblPersonagem19.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem19.ForeColor = SystemColors.ButtonHighlight;
+            lblPersonagem19.Location = new Point(1195, 543);
             lblPersonagem19.Name = "lblPersonagem19";
-            lblPersonagem19.Size = new Size(65, 28);
+            lblPersonagem19.Size = new Size(73, 28);
             lblPersonagem19.TabIndex = 40;
             lblPersonagem19.Text = "FALKE";
             // 
@@ -547,11 +549,11 @@
             // 
             lblPersonagem18.AutoSize = true;
             lblPersonagem18.BackColor = Color.Transparent;
-            lblPersonagem18.Font = new Font("Segoe UI", 15F);
-            lblPersonagem18.ForeColor = SystemColors.ControlLightLight;
-            lblPersonagem18.Location = new Point(1086, 543);
+            lblPersonagem18.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem18.ForeColor = SystemColors.ButtonHighlight;
+            lblPersonagem18.Location = new Point(1077, 543);
             lblPersonagem18.Name = "lblPersonagem18";
-            lblPersonagem18.Size = new Size(87, 28);
+            lblPersonagem18.Size = new Size(94, 28);
             lblPersonagem18.TabIndex = 39;
             lblPersonagem18.Text = "SAKURA";
             // 
@@ -559,11 +561,11 @@
             // 
             lblPersonagem17.AutoSize = true;
             lblPersonagem17.BackColor = Color.Transparent;
-            lblPersonagem17.Font = new Font("Segoe UI", 15F);
-            lblPersonagem17.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem17.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem17.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem17.Location = new Point(992, 543);
             lblPersonagem17.Name = "lblPersonagem17";
-            lblPersonagem17.Size = new Size(49, 28);
+            lblPersonagem17.Size = new Size(59, 28);
             lblPersonagem17.TabIndex = 38;
             lblPersonagem17.Text = "GILL";
             // 
@@ -571,11 +573,11 @@
             // 
             lblPersonagem16.AutoSize = true;
             lblPersonagem16.BackColor = Color.Transparent;
-            lblPersonagem16.Font = new Font("Segoe UI", 15F);
-            lblPersonagem16.ForeColor = SystemColors.ControlLightLight;
+            lblPersonagem16.Font = new Font("Comic Sans MS", 15F);
+            lblPersonagem16.ForeColor = SystemColors.ButtonHighlight;
             lblPersonagem16.Location = new Point(858, 543);
             lblPersonagem16.Name = "lblPersonagem16";
-            lblPersonagem16.Size = new Size(102, 28);
+            lblPersonagem16.Size = new Size(109, 28);
             lblPersonagem16.TabIndex = 37;
             lblPersonagem16.Text = "E. HONDA";
             // 
@@ -595,6 +597,7 @@
             // 
             panelPrincipal.Anchor = AnchorStyles.None;
             panelPrincipal.BackColor = Color.Transparent;
+            panelPrincipal.Controls.Add(picSair);
             panelPrincipal.Controls.Add(picLogo);
             panelPrincipal.Controls.Add(picPersonagem1);
             panelPrincipal.Controls.Add(picPersonagem2);
@@ -643,6 +646,16 @@
             panelPrincipal.Size = new Size(1414, 597);
             panelPrincipal.TabIndex = 43;
             // 
+            // picSair
+            // 
+            picSair.BackgroundImage = Properties.Resources.picSair;
+            picSair.BackgroundImageLayout = ImageLayout.Stretch;
+            picSair.Location = new Point(1257, 23);
+            picSair.Name = "picSair";
+            picSair.Size = new Size(125, 54);
+            picSair.TabIndex = 43;
+            picSair.TabStop = false;
+            // 
             // TelaInicioJogoCorrida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -651,6 +664,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1438, 634);
             Controls.Add(panelPrincipal);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "TelaInicioJogoCorrida";
             Text = "TelaInicioJogoCorrida";
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
@@ -677,6 +691,7 @@
             ((System.ComponentModel.ISupportInitialize)picAleatorio).EndInit();
             panelPrincipal.ResumeLayout(false);
             panelPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picSair).EndInit();
             ResumeLayout(false);
         }
 
@@ -727,5 +742,6 @@
         private Label lblAleatorio;
         private Panel panelPrincipal;
         private PictureBox picLogo;
+        private PictureBox picSair;
     }
 }

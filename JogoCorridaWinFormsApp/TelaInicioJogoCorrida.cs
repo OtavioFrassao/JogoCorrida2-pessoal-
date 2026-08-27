@@ -21,7 +21,11 @@ namespace JogoCorridaWinFormsApp
         bool bordaAcesa = true;
 
         System.Media.SoundPlayer somRoleta = new System.Media.SoundPlayer(@"D:\roleta-normal.wav");
-        public TelaInicioJogoCorrida()
+
+        public bool isMultiplayer = false;
+        public int jogadorAtual = 1;
+        PictureBox personagemP1 = null;
+        public TelaInicioJogoCorrida(bool modoMultiplayer = false)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
@@ -34,13 +38,19 @@ namespace JogoCorridaWinFormsApp
         private void TelaInicioJogoCorrida_Load(object sender, EventArgs e)
         {
             somRoleta.LoadAsync();
+
+            if (picSair != null)
+            {
+                picSair.Click += PicSair_Click;
+            }
+
             if (panelPrincipal != null)
             {
                 foreach (Control controle in panelPrincipal.Controls)
                 {
                     if (controle is PictureBox pic)
                     {
-                        if (pic.Name == "picLogo" || (pic.Image == null && pic.BackgroundImage == null))
+                        if (pic.Name == "picLogo" || pic.Name == "picSair" || (pic.Image == null && pic.BackgroundImage == null))
                         {
                             continue;
                         }
@@ -71,11 +81,18 @@ namespace JogoCorridaWinFormsApp
 
             if (listaPersonagens.Count > 0 && pic == listaPersonagens[indiceSelecionado] && bordaAcesa)
             {
+                Color corBorda = (jogadorAtual == 1) ? Color.Red : Color.DeepSkyBlue;
                 ControlPaint.DrawBorder(e.Graphics, pic.ClientRectangle,
-                    Color.DarkRed, 4, ButtonBorderStyle.Solid,
-                    Color.DarkRed, 4, ButtonBorderStyle.Solid,
-                    Color.DarkRed, 4, ButtonBorderStyle.Solid,
-                    Color.DarkRed, 4, ButtonBorderStyle.Solid);
+                    corBorda, 4, ButtonBorderStyle.Solid, corBorda, 4, ButtonBorderStyle.Solid,
+                    corBorda, 4, ButtonBorderStyle.Solid, corBorda, 4, ButtonBorderStyle.Solid);
+            }
+
+            // Mantém a borda vermelha acesa no personagem que o P1 já escolheu
+            if (isMultiplayer && jogadorAtual == 2 && pic == personagemP1)
+            {
+                ControlPaint.DrawBorder(e.Graphics, pic.ClientRectangle,
+                    Color.Red, 4, ButtonBorderStyle.Solid, Color.Red, 4, ButtonBorderStyle.Solid,
+                    Color.Red, 4, ButtonBorderStyle.Solid, Color.Red, 4, ButtonBorderStyle.Solid);
             }
         }
 
@@ -126,6 +143,12 @@ namespace JogoCorridaWinFormsApp
                 ConfirmarSelecao(listaPersonagens[indiceSelecionado]);
                 return true;
             }
+            else if (keyData == Keys.Escape)
+            {
+                // Permite usar o botão ESC do teclado para voltar ao Menu
+                VoltarParaMenu();
+                return true;
+            }
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -135,7 +158,7 @@ namespace JogoCorridaWinFormsApp
             if (telaTravada) return;
 
             PictureBox clicado = sender as PictureBox;
-            indiceSelecionado = listaPersonagens.IndexOf(clicado); 
+            indiceSelecionado = listaPersonagens.IndexOf(clicado);
             AtualizarBordaVisual();
             ConfirmarSelecao(clicado);
         }
@@ -165,7 +188,7 @@ namespace JogoCorridaWinFormsApp
             somRoleta.Play();
 
             cronometroRoleta.Restart();
-            timerRoleta.Interval = 40; 
+            timerRoleta.Interval = 40;
             timerRoleta.Start();
         }
 
@@ -177,8 +200,7 @@ namespace JogoCorridaWinFormsApp
             {
                 indiceSelecionado++;
                 if (indiceSelecionado >= listaPersonagens.Count) indiceSelecionado = 0;
-
-            } while (listaPersonagens[indiceSelecionado].Name == "picAleatorio");
+            } while (listaPersonagens[indiceSelecionado].Name == "picAleatorio" || (isMultiplayer && jogadorAtual == 2 && listaPersonagens[indiceSelecionado] == personagemP1));
 
             AtualizarBordaVisual();
 
@@ -206,7 +228,7 @@ namespace JogoCorridaWinFormsApp
             timerPiscar.Interval = 150; // A cada 150 milissegundos ela pisca
             timerPiscar.Tick += (s, args) =>
             {
-                bordaAcesa = !bordaAcesa; 
+                bordaAcesa = !bordaAcesa;
                 AtualizarBordaVisual();
                 piscadas++;
 
@@ -225,20 +247,45 @@ namespace JogoCorridaWinFormsApp
             {
                 timerEspera.Stop();
 
-                FormJogoCorrida jogo = new FormJogoCorrida();
-                jogo.Show();
-                this.Hide();
+                if (isMultiplayer && jogadorAtual == 1)
+                {
+                    personagemP1 = personagemEscolhido;
+                    jogadorAtual = 2; 
+                    telaTravada = false;
+                    AtualizarBordaVisual();
+                }
+                else
+                {
+                    // Se for Singleplayer ou o P2 já escolheu, vai pro Cenário!
+                    TelaCenarioJogoCorrida jogo = new TelaCenarioJogoCorrida();
+                    jogo.Show();
+                    this.Hide();
+                }
             };
             timerEspera.Start();
         }
         private void IniciarCorrida(PictureBox personagemEscolhido)
         {
-            
-            FormJogoCorrida jogo = new FormJogoCorrida();
+
+            TelaCenarioJogoCorrida jogo = new TelaCenarioJogoCorrida();
             jogo.Show();
 
             this.Hide();
         }
+
+        private void PicSair_Click(object sender, EventArgs e)
+        {
+            if (telaTravada) return; // Evita que o jogador saia no meio da roleta girando
+            VoltarParaMenu();
+        }
+
+        private void VoltarParaMenu()
+        {
+            PrimeiraTelaJogo menu = new PrimeiraTelaJogo();
+            menu.Show();
+            this.Close();
+        }
+
 
     }
 }

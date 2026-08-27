@@ -73,6 +73,26 @@ namespace JogoCorridaWinFormsApp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EstatisticaImagem {
+            get {
+                object obj = ResourceManager.GetObject("EstatisticaImagem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EstatisticaImagem1 {
+            get {
+                object obj = ResourceManager.GetObject("EstatisticaImagem1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FundoStreetCars {
             get {
                 object obj = ResourceManager.GetObject("FundoStreetCars", resourceCulture);
@@ -313,6 +333,56 @@ namespace JogoCorridaWinFormsApp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap picCenario {
+            get {
+                object obj = ResourceManager.GetObject("picCenario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picCenario1 {
+            get {
+                object obj = ResourceManager.GetObject("picCenario1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picCenario2 {
+            get {
+                object obj = ResourceManager.GetObject("picCenario2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picCenario3 {
+            get {
+                object obj = ResourceManager.GetObject("picCenario3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picCenario4 {
+            get {
+                object obj = ResourceManager.GetObject("picCenario4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap picEstatisticas {
             get {
                 object obj = ResourceManager.GetObject("picEstatisticas", resourceCulture);
@@ -333,9 +403,89 @@ namespace JogoCorridaWinFormsApp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap picModoDeJogo {
+            get {
+                object obj = ResourceManager.GetObject("picModoDeJogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picMultimsg {
+            get {
+                object obj = ResourceManager.GetObject("picMultimsg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picMultiplayer {
+            get {
+                object obj = ResourceManager.GetObject("picMultiplayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picMultiplayer__2_ {
+            get {
+                object obj = ResourceManager.GetObject("picMultiplayer (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap picObjeto {
             get {
                 object obj = ResourceManager.GetObject("picObjeto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picSair {
+            get {
+                object obj = ResourceManager.GetObject("picSair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picSingleplayer {
+            get {
+                object obj = ResourceManager.GetObject("picSingleplayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picSingleplayer__2_ {
+            get {
+                object obj = ResourceManager.GetObject("picSingleplayer (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picSingmsg {
+            get {
+                object obj = ResourceManager.GetObject("picSingmsg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
