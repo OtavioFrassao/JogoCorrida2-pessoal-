@@ -17,7 +17,7 @@ namespace JogoCorridaWinFormsApp
         System.Windows.Forms.Timer timerRoleta = new System.Windows.Forms.Timer();
         System.Diagnostics.Stopwatch cronometroRoleta = new System.Diagnostics.Stopwatch();
         bool bordaAcesa = true;
-        System.Media.SoundPlayer somRoleta = new System.Media.SoundPlayer(@"D:\roleta-normal.wav");
+        System.Media.SoundPlayer somRoleta = new System.Media.SoundPlayer(Properties.Resources.roleta_normal);
         public TelaCenarioJogoCorrida()
         {
             InitializeComponent();

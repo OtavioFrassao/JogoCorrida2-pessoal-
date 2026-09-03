@@ -20,17 +20,21 @@ namespace JogoCorridaWinFormsApp
 
         bool bordaAcesa = true;
 
-        System.Media.SoundPlayer somRoleta = new System.Media.SoundPlayer(@"D:\roleta-normal.wav");
+        System.Media.SoundPlayer somRoleta = new System.Media.SoundPlayer(Properties.Resources.roleta_normal);
+        System.Media.SoundPlayer somClick = new System.Media.SoundPlayer(Properties.Resources.som_click);
 
         public bool isMultiplayer = false;
         public int jogadorAtual = 1;
         PictureBox personagemP1 = null;
+
         public TelaInicioJogoCorrida(bool modoMultiplayer = false)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
 
             this.WindowState = FormWindowState.Maximized;
+
+            isMultiplayer = modoMultiplayer;
             timerRoleta.Tick += TimerRoleta_Tick;
             this.Load += TelaInicioJogoCorrida_Load;
         }
@@ -38,6 +42,7 @@ namespace JogoCorridaWinFormsApp
         private void TelaInicioJogoCorrida_Load(object sender, EventArgs e)
         {
             somRoleta.LoadAsync();
+            somClick.LoadAsync();
 
             if (picSair != null)
             {
@@ -50,7 +55,7 @@ namespace JogoCorridaWinFormsApp
                 {
                     if (controle is PictureBox pic)
                     {
-                        if (pic.Name == "picLogo" || pic.Name == "picSair" || (pic.Image == null && pic.BackgroundImage == null))
+                        if (pic.Name == "picLogo" || pic.Name == "picSair" || pic.Name == "picTitulo" || (pic.Image == null && pic.BackgroundImage == null))
                         {
                             continue;
                         }
@@ -79,20 +84,40 @@ namespace JogoCorridaWinFormsApp
         {
             PictureBox pic = sender as PictureBox;
 
+            // Configurações da fonte e cores da "Etiqueta" no canto
+            Font fonteTag = new Font("Impact", 12, FontStyle.Regular);
+            SolidBrush fundoVermelho = new SolidBrush(Color.Red);
+            SolidBrush fundoAzul = new SolidBrush(Color.DeepSkyBlue);
+            SolidBrush corTexto = new SolidBrush(Color.White);
+
+            // 1. Borda e Etiqueta de quem está navegando agora
             if (listaPersonagens.Count > 0 && pic == listaPersonagens[indiceSelecionado] && bordaAcesa)
             {
-                Color corBorda = (jogadorAtual == 1) ? Color.Red : Color.DeepSkyBlue;
+                Color corBorda = (jogadorAtual == 1) ? Color.DarkRed : Color.DeepSkyBlue;
+                SolidBrush fundoFiltro = (jogadorAtual == 1) ? fundoVermelho : fundoAzul;
+                string textoJogador = (jogadorAtual == 1) ? "P1" : "P2";
+
+                // Desenha a borda
                 ControlPaint.DrawBorder(e.Graphics, pic.ClientRectangle,
                     corBorda, 4, ButtonBorderStyle.Solid, corBorda, 4, ButtonBorderStyle.Solid,
                     corBorda, 4, ButtonBorderStyle.Solid, corBorda, 4, ButtonBorderStyle.Solid);
+
+                // Desenha a caixinha com o texto P1 ou P2 no canto superior esquerdo
+                e.Graphics.FillRectangle(fundoFiltro, 0, 0, 26, 22);
+                e.Graphics.DrawString(textoJogador, fonteTag, corTexto, 2, 0);
             }
 
-            // Mantém a borda vermelha acesa no personagem que o P1 já escolheu
+            // 2. Mantém a borda e a etiqueta "P1" fixas no personagem que o P1 já escolheu
             if (isMultiplayer && jogadorAtual == 2 && pic == personagemP1)
             {
+                // Borda vermelha fixa
                 ControlPaint.DrawBorder(e.Graphics, pic.ClientRectangle,
-                    Color.Red, 4, ButtonBorderStyle.Solid, Color.Red, 4, ButtonBorderStyle.Solid,
-                    Color.Red, 4, ButtonBorderStyle.Solid, Color.Red, 4, ButtonBorderStyle.Solid);
+                    Color.DarkRed, 4, ButtonBorderStyle.Solid, Color.DarkRed, 4, ButtonBorderStyle.Solid,
+                    Color.DarkRed, 4, ButtonBorderStyle.Solid, Color.DarkRed, 4, ButtonBorderStyle.Solid);
+
+                // Caixinha vermelha com "P1" fixa
+                e.Graphics.FillRectangle(fundoVermelho, 0, 0, 26, 22);
+                e.Graphics.DrawString("P1", fonteTag, corTexto, 2, 0);
             }
         }
 
@@ -122,7 +147,6 @@ namespace JogoCorridaWinFormsApp
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (telaTravada || listaPersonagens.Count == 0) return true;
-
 
             if (keyData == Keys.Right || keyData == Keys.D || keyData == Keys.Tab)
             {
@@ -158,7 +182,12 @@ namespace JogoCorridaWinFormsApp
             if (telaTravada) return;
 
             PictureBox clicado = sender as PictureBox;
+
+            // Impede o P2 de clicar no personagem do P1
+            if (isMultiplayer && jogadorAtual == 2 && clicado == personagemP1) return;
+
             indiceSelecionado = listaPersonagens.IndexOf(clicado);
+            somClick.Play();
             AtualizarBordaVisual();
             ConfirmarSelecao(clicado);
         }
@@ -175,15 +204,30 @@ namespace JogoCorridaWinFormsApp
             {
                 ExecutarSorteio();
             }
+            // Impede confirmação caso o P2 tente selecionar o personagem do P1
+            else if (isMultiplayer && jogadorAtual == 2 && selecionado == personagemP1)
+            {
+                return;
+            }
             else
             {
-                IniciarCorrida(selecionado);
+                // Chama IniciarTransicao para piscar a borda antes de ir pra corrida
+                IniciarTransicao(selecionado);
             }
         }
 
         private void ExecutarSorteio()
         {
             telaTravada = true;
+
+            // Sorteia o vencedor secretamente antes de girar
+            Random rnd = new Random();
+            do
+            {
+                int rndIndex = rnd.Next(0, listaPersonagens.Count);
+                personagemVencedor = listaPersonagens[rndIndex];
+            }
+            while (personagemVencedor.Name == "picAleatorio" || (isMultiplayer && jogadorAtual == 2 && personagemVencedor == personagemP1));
 
             somRoleta.Play();
 
@@ -209,7 +253,9 @@ namespace JogoCorridaWinFormsApp
             if (tempoPassado > 6500) timerRoleta.Interval = 100; // Aos 7 seg freia
             if (tempoPassado > 7800) timerRoleta.Interval = 300; // Aos 8.5 seg freia mais
             if (tempoPassado > 9300) timerRoleta.Interval = 450; //parando
-            if (tempoPassado >= 9500)
+
+            // Só para a roleta se estiver em cima do vencedor sorteado
+            if (tempoPassado >= 9500 && listaPersonagens[indiceSelecionado] == personagemVencedor)
             {
                 timerRoleta.Stop();
                 cronometroRoleta.Stop();
@@ -217,6 +263,7 @@ namespace JogoCorridaWinFormsApp
                 IniciarTransicao(listaPersonagens[indiceSelecionado]);
             }
         }
+
         private void IniciarTransicao(PictureBox personagemEscolhido)
         {
             telaTravada = true;
@@ -250,8 +297,18 @@ namespace JogoCorridaWinFormsApp
                 if (isMultiplayer && jogadorAtual == 1)
                 {
                     personagemP1 = personagemEscolhido;
-                    jogadorAtual = 2; 
+                    jogadorAtual = 2;
+
+                    // Empurra a borda do P2 pra não nascer em cima do P1
+                    do
+                    {
+                        indiceSelecionado++;
+                        if (indiceSelecionado >= listaPersonagens.Count) indiceSelecionado = 0;
+                    }
+                    while (listaPersonagens[indiceSelecionado].Name == "picAleatorio" || listaPersonagens[indiceSelecionado] == personagemP1);
+
                     telaTravada = false;
+                    bordaAcesa = true;
                     AtualizarBordaVisual();
                 }
                 else
@@ -264,9 +321,9 @@ namespace JogoCorridaWinFormsApp
             };
             timerEspera.Start();
         }
+
         private void IniciarCorrida(PictureBox personagemEscolhido)
         {
-
             TelaCenarioJogoCorrida jogo = new TelaCenarioJogoCorrida();
             jogo.Show();
 
@@ -285,7 +342,5 @@ namespace JogoCorridaWinFormsApp
             menu.Show();
             this.Close();
         }
-
-
     }
 }
