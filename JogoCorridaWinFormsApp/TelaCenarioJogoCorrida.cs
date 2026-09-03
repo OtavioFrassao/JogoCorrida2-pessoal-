@@ -8,8 +8,19 @@ using System.Windows.Forms;
 
 namespace JogoCorridaWinFormsApp
 {
+    
     public partial class TelaCenarioJogoCorrida : Form
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000; // Ativa o WS_EX_COMPOSITED (Double Buffer do Windows)
+                return handleParam;
+            }
+        }
+
         List<PictureBox> listaCenarios = new List<PictureBox>();
         int indiceSelecionado = 0;
         bool telaTravada = false;
@@ -18,9 +29,16 @@ namespace JogoCorridaWinFormsApp
         System.Diagnostics.Stopwatch cronometroRoleta = new System.Diagnostics.Stopwatch();
         bool bordaAcesa = true;
         System.Media.SoundPlayer somRoleta = new System.Media.SoundPlayer(Properties.Resources.roleta_normal);
-        public TelaCenarioJogoCorrida()
+
+        private readonly bool isMultiplayer;
+
+
+        public TelaCenarioJogoCorrida(bool modoMultiplayer)
         {
             InitializeComponent();
+
+            isMultiplayer = modoMultiplayer;
+
             this.DoubleBuffered = true;
             this.WindowState = FormWindowState.Maximized;
 
@@ -32,6 +50,8 @@ namespace JogoCorridaWinFormsApp
 
         private void TelaCenarioJogoCorrida_Load(object sender, EventArgs e)
         {
+            CarregarMiniaturasCenarios();
+
             somRoleta.LoadAsync();
             if (picSair != null) picSair.Click += PicSair_Click;
 
@@ -39,21 +59,28 @@ namespace JogoCorridaWinFormsApp
             {
                 foreach (Control controle in panelPrincipal4.Controls)
                 {
-                    if (controle is PictureBox pic)
-                    {
-                        if (pic.Name == "picLogo" || pic.Name == "picCenario" ||pic.Name == "picSair" || (pic.Image == null && pic.BackgroundImage == null)) continue;
+                    if (controle is not PictureBox pic)
+                        continue;
 
-                        pic.BorderStyle = BorderStyle.None;
-                        pic.Paint += Cenario_Paint;
-                        listaCenarios.Add(pic);
+                    bool ehCenario = pic.Tag is TipoCenario;
+                    bool ehAleatorio = pic.Name == "picAleatorio";
 
-                        if (pic.Name == "picAleatorio") pic.Click += PicAleatorio_Click;
-                        else pic.Click += Cenario_Click;
-                    }
+                    if (!ehCenario && !ehAleatorio)
+                        continue;
+
+                    pic.BorderStyle = BorderStyle.None;
+                    pic.Paint += Cenario_Paint;
+
+                    listaCenarios.Add(pic);
+
+                    if (ehAleatorio)
+                        pic.Click += PicAleatorio_Click;
+                    else
+                        pic.Click += Cenario_Click;
                 }
                 listaCenarios = listaCenarios.OrderBy(p => p.Top).ThenBy(p => p.Left).ToList();
             }
-            if (listaCenarios.Count > 0) AtualizarBordaVisual();
+            
         }
 
         private void Cenario_Paint(object sender, PaintEventArgs e)
@@ -190,9 +217,12 @@ namespace JogoCorridaWinFormsApp
                 timerEspera.Stop();
 
                 // FINALMENTE VAI PARA O JOGO PRINCIPAL!
-                FormJogoCorrida jogoFinal = new FormJogoCorrida();
-                jogoFinal.Show();
-                this.Hide();
+                TipoCenario cenarioSelecionado = (TipoCenario)cenarioEscolhido.Tag;
+
+                FormJogoCorrida jogoFinal =
+                    new FormJogoCorrida(isMultiplayer, cenarioSelecionado);
+
+                TrocarDeTela(jogoFinal);
             };
             timerEspera.Start();
         }
@@ -206,10 +236,31 @@ namespace JogoCorridaWinFormsApp
         private void VoltarParaMenu()
         {
             PrimeiraTelaJogo menu = new PrimeiraTelaJogo();
-            menu.Show();
-            this.Close();
+            TrocarDeTela(menu);
         }
 
+        private void TrocarDeTela(Form proximaTela)
+        {
+            proximaTela.Show(); // Abre a tela nova por cima
 
+            // Espera 100 milissegundos antes de esconder a tela velha
+            System.Windows.Forms.Timer timerTransicao = new System.Windows.Forms.Timer();
+            timerTransicao.Interval = 100;
+            timerTransicao.Tick += (s, args) =>
+            {
+                this.Hide(); // Esconde a tela antiga silenciosamente por baixo
+                timerTransicao.Stop();
+                timerTransicao.Dispose();
+            };
+            timerTransicao.Start();
+        }
+
+        private void CarregarMiniaturasCenarios()
+        {
+            picCenario1.Tag = TipoCenario.Areas_Rochosas;
+            picCenario2.Tag = TipoCenario.Alem_Do_Mundo;
+            picCenario3.Tag = TipoCenario.Terras_Desconhecidas;
+            picCenario4.Tag = TipoCenario.Floresta_Feliz;
+        }
     }
 }

@@ -8,9 +8,19 @@ using System.Windows.Forms;
 
 namespace JogoCorridaWinFormsApp
 {
+    
     public partial class TelaEstatisticaJogoCorrida : Form
     {
-        
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000; // Ativa o WS_EX_COMPOSITED (Double Buffer do Windows)
+                return handleParam;
+            }
+        }
+
         public TelaEstatisticaJogoCorrida()
         {
             InitializeComponent();
@@ -44,8 +54,23 @@ namespace JogoCorridaWinFormsApp
         private void VoltarParaMenu()
         {
             PrimeiraTelaJogo menu = new PrimeiraTelaJogo();
-            menu.Show();
-            this.Close();
+            TrocarDeTela(menu);
+        }
+
+        private void TrocarDeTela(Form proximaTela)
+        {
+            proximaTela.Show(); // Abre a tela nova por cima
+
+            // Espera 100 milissegundos antes de esconder a tela velha
+            System.Windows.Forms.Timer timerTransicao = new System.Windows.Forms.Timer();
+            timerTransicao.Interval = 100;
+            timerTransicao.Tick += (s, args) =>
+            {
+                this.Hide(); // Esconde a tela antiga silenciosamente por baixo
+                timerTransicao.Stop();
+                timerTransicao.Dispose();
+            };
+            timerTransicao.Start();
         }
     }
 }

@@ -6,8 +6,19 @@ using System.Windows.Forms;
 
 namespace JogoCorridaWinFormsApp
 {
+    
     public partial class TelaInicioJogoCorrida : Form
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000; // Ativa o WS_EX_COMPOSITED (Double Buffer do Windows)
+                return handleParam;
+            }
+        }
+
         List<PictureBox> listaPersonagens = new List<PictureBox>();
         int indiceSelecionado = 0;
         bool telaTravada = false;
@@ -314,9 +325,9 @@ namespace JogoCorridaWinFormsApp
                 else
                 {
                     // Se for Singleplayer ou o P2 já escolheu, vai pro Cenário!
-                    TelaCenarioJogoCorrida jogo = new TelaCenarioJogoCorrida();
-                    jogo.Show();
-                    this.Hide();
+                    TelaCenarioJogoCorrida jogo = new TelaCenarioJogoCorrida( isMultiplayer);
+                    TrocarDeTela(jogo);
+                    
                 }
             };
             timerEspera.Start();
@@ -324,10 +335,8 @@ namespace JogoCorridaWinFormsApp
 
         private void IniciarCorrida(PictureBox personagemEscolhido)
         {
-            TelaCenarioJogoCorrida jogo = new TelaCenarioJogoCorrida();
-            jogo.Show();
-
-            this.Hide();
+            TelaCenarioJogoCorrida jogo = new TelaCenarioJogoCorrida(isMultiplayer);
+            TrocarDeTela(jogo);
         }
 
         private void PicSair_Click(object sender, EventArgs e)
@@ -339,8 +348,22 @@ namespace JogoCorridaWinFormsApp
         private void VoltarParaMenu()
         {
             PrimeiraTelaJogo menu = new PrimeiraTelaJogo();
-            menu.Show();
-            this.Close();
+            TrocarDeTela(menu);
+        }
+        private void TrocarDeTela(Form proximaTela)
+        {
+            proximaTela.Show(); // Abre a tela nova por cima
+
+            // Espera 100 milissegundos antes de esconder a tela velha
+            System.Windows.Forms.Timer timerTransicao = new System.Windows.Forms.Timer();
+            timerTransicao.Interval = 100;
+            timerTransicao.Tick += (s, args) =>
+            {
+                this.Hide(); // Esconde a tela antiga silenciosamente por baixo
+                timerTransicao.Stop();
+                timerTransicao.Dispose();
+            };
+            timerTransicao.Start();
         }
     }
 }

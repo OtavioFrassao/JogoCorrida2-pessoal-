@@ -30,14 +30,14 @@
         {
             picLogo = new PictureBox();
             panelPrincipal2 = new Panel();
+            picSair = new PictureBox();
             picEstatisticas = new PictureBox();
             picInicio = new PictureBox();
-            picSair = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             panelPrincipal2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picSair).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picEstatisticas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picInicio).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picSair).BeginInit();
             SuspendLayout();
             // 
             // picLogo
@@ -63,6 +63,17 @@
             panelPrincipal2.Size = new Size(1434, 635);
             panelPrincipal2.TabIndex = 4;
             // 
+            // picSair
+            // 
+            picSair.BackColor = Color.FromArgb(100, 0, 0, 0);
+            picSair.BackgroundImage = Properties.Resources.picSair;
+            picSair.BackgroundImageLayout = ImageLayout.Stretch;
+            picSair.Location = new Point(600, 482);
+            picSair.Name = "picSair";
+            picSair.Size = new Size(269, 114);
+            picSair.TabIndex = 44;
+            picSair.TabStop = false;
+            // 
             // picEstatisticas
             // 
             picEstatisticas.BackColor = Color.FromArgb(100, 0, 0, 0);
@@ -85,22 +96,12 @@
             picInicio.TabIndex = 2;
             picInicio.TabStop = false;
             // 
-            // picSair
-            // 
-            picSair.BackColor = Color.FromArgb(100, 0, 0, 0);
-            picSair.BackgroundImage = Properties.Resources.picSair;
-            picSair.BackgroundImageLayout = ImageLayout.Stretch;
-            picSair.Location = new Point(600, 482);
-            picSair.Name = "picSair";
-            picSair.Size = new Size(269, 114);
-            picSair.TabIndex = 44;
-            picSair.TabStop = false;
-            // 
             // PrimeiraTelaJogo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
+            BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = Properties.Resources.FundoStreetCars;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1439, 641);
@@ -110,9 +111,9 @@
             Text = "PrimeiraTelaJogo";
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             panelPrincipal2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picSair).EndInit();
             ((System.ComponentModel.ISupportInitialize)picEstatisticas).EndInit();
             ((System.ComponentModel.ISupportInitialize)picInicio).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picSair).EndInit();
             ResumeLayout(false);
         }
 

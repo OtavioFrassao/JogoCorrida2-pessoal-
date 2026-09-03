@@ -66,20 +66,18 @@
             panelPrincipal4.Controls.Add(picSair);
             panelPrincipal4.Controls.Add(picAleatorio);
             panelPrincipal4.Controls.Add(lblAleatorio);
-            panelPrincipal4.Location = new Point(14, -101);
-            panelPrincipal4.Margin = new Padding(3, 4, 3, 4);
+            panelPrincipal4.Location = new Point(12, -80);
             panelPrincipal4.Name = "panelPrincipal4";
-            panelPrincipal4.Size = new Size(1475, 863);
+            panelPrincipal4.Size = new Size(1291, 681);
             panelPrincipal4.TabIndex = 0;
             // 
             // picCenario4
             // 
             picCenario4.BackgroundImage = Properties.Resources.picCenario1;
             picCenario4.BackgroundImageLayout = ImageLayout.Stretch;
-            picCenario4.Location = new Point(968, 507);
-            picCenario4.Margin = new Padding(3, 4, 3, 4);
+            picCenario4.Location = new Point(847, 400);
             picCenario4.Name = "picCenario4";
-            picCenario4.Size = new Size(426, 290);
+            picCenario4.Size = new Size(373, 229);
             picCenario4.TabIndex = 59;
             picCenario4.TabStop = false;
             // 
@@ -87,10 +85,9 @@
             // 
             picCenario3.BackgroundImage = Properties.Resources.picCenario4;
             picCenario3.BackgroundImageLayout = ImageLayout.Stretch;
-            picCenario3.Location = new Point(968, 161);
-            picCenario3.Margin = new Padding(3, 4, 3, 4);
+            picCenario3.Location = new Point(847, 127);
             picCenario3.Name = "picCenario3";
-            picCenario3.Size = new Size(426, 290);
+            picCenario3.Size = new Size(373, 229);
             picCenario3.TabIndex = 58;
             picCenario3.TabStop = false;
             // 
@@ -98,10 +95,9 @@
             // 
             picCenario2.BackgroundImage = Properties.Resources.picCenario3;
             picCenario2.BackgroundImageLayout = ImageLayout.Stretch;
-            picCenario2.Location = new Point(71, 507);
-            picCenario2.Margin = new Padding(3, 4, 3, 4);
+            picCenario2.Location = new Point(62, 400);
             picCenario2.Name = "picCenario2";
-            picCenario2.Size = new Size(426, 290);
+            picCenario2.Size = new Size(373, 229);
             picCenario2.TabIndex = 57;
             picCenario2.TabStop = false;
             // 
@@ -109,10 +105,9 @@
             // 
             picCenario.BackgroundImage = Properties.Resources.picCenario;
             picCenario.BackgroundImageLayout = ImageLayout.Stretch;
-            picCenario.Location = new Point(503, 13);
-            picCenario.Margin = new Padding(3, 4, 3, 4);
+            picCenario.Location = new Point(440, 10);
             picCenario.Name = "picCenario";
-            picCenario.Size = new Size(496, 148);
+            picCenario.Size = new Size(434, 117);
             picCenario.TabIndex = 4;
             picCenario.TabStop = false;
             // 
@@ -120,10 +115,9 @@
             // 
             picCenario1.BackgroundImage = Properties.Resources.picCenario2;
             picCenario1.BackgroundImageLayout = ImageLayout.Stretch;
-            picCenario1.Location = new Point(71, 161);
-            picCenario1.Margin = new Padding(3, 4, 3, 4);
+            picCenario1.Location = new Point(62, 127);
             picCenario1.Name = "picCenario1";
-            picCenario1.Size = new Size(426, 290);
+            picCenario1.Size = new Size(373, 229);
             picCenario1.TabIndex = 54;
             picCenario1.TabStop = false;
             // 
@@ -132,7 +126,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Comic Sans MS", 20F);
             label3.ForeColor = SystemColors.ButtonFace;
-            label3.Location = new Point(167, 801);
+            label3.Location = new Point(140, 632);
             label3.Name = "label3";
             label3.Size = new Size(210, 38);
             label3.TabIndex = 53;
@@ -143,7 +137,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Comic Sans MS", 20F);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(1088, 801);
+            label2.Location = new Point(939, 632);
             label2.Name = "label2";
             label2.Size = new Size(190, 38);
             label2.TabIndex = 52;
@@ -154,7 +148,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 20F);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(1025, 455);
+            label1.Location = new Point(883, 359);
             label1.Name = "label1";
             label1.Size = new Size(295, 38);
             label1.TabIndex = 51;
@@ -165,7 +159,7 @@
             lblCenario1.AutoSize = true;
             lblCenario1.Font = new Font("Comic Sans MS", 20F);
             lblCenario1.ForeColor = SystemColors.ButtonFace;
-            lblCenario1.Location = new Point(160, 455);
+            lblCenario1.Location = new Point(140, 359);
             lblCenario1.Name = "lblCenario1";
             lblCenario1.Size = new Size(216, 38);
             lblCenario1.TabIndex = 50;
@@ -175,10 +169,9 @@
             // 
             picSair.BackgroundImage = Properties.Resources.picSair;
             picSair.BackgroundImageLayout = ImageLayout.Stretch;
-            picSair.Location = new Point(1310, 6);
-            picSair.Margin = new Padding(3, 4, 3, 4);
+            picSair.Location = new Point(1146, 5);
             picSair.Name = "picSair";
-            picSair.Size = new Size(143, 68);
+            picSair.Size = new Size(125, 54);
             picSair.TabIndex = 45;
             picSair.TabStop = false;
             // 
@@ -187,10 +180,9 @@
             picAleatorio.BackColor = Color.Transparent;
             picAleatorio.BackgroundImage = Properties.Resources.aleatorio;
             picAleatorio.BackgroundImageLayout = ImageLayout.Stretch;
-            picAleatorio.Location = new Point(649, 384);
-            picAleatorio.Margin = new Padding(3, 4, 3, 4);
+            picAleatorio.Location = new Point(568, 303);
             picAleatorio.Name = "picAleatorio";
-            picAleatorio.Size = new Size(173, 195);
+            picAleatorio.Size = new Size(151, 154);
             picAleatorio.TabIndex = 43;
             picAleatorio.TabStop = false;
             // 
@@ -200,7 +192,7 @@
             lblAleatorio.BackColor = Color.Transparent;
             lblAleatorio.Font = new Font("Comic Sans MS", 20F);
             lblAleatorio.ForeColor = SystemColors.ControlLightLight;
-            lblAleatorio.Location = new Point(627, 583);
+            lblAleatorio.Location = new Point(549, 460);
             lblAleatorio.Name = "lblAleatorio";
             lblAleatorio.Size = new Size(184, 38);
             lblAleatorio.TabIndex = 44;
@@ -208,14 +200,14 @@
             // 
             // TelaCenarioJogoCorrida
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Desktop;
             BackgroundImage = Properties.Resources.FundoStreetCars;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1503, 776);
+            ClientSize = new Size(1315, 613);
             Controls.Add(panelPrincipal4);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "TelaCenarioJogoCorrida";
             Text = "TelaCenarioJogoCorrida";
             panelPrincipal4.ResumeLayout(false);

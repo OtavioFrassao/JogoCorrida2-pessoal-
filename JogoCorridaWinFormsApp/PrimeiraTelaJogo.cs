@@ -1,23 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace JogoCorridaWinFormsApp
 {
     public partial class PrimeiraTelaJogo : Form
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000; // Ativa o WS_EX_COMPOSITED
+                return handleParam;
+            }
+        }
+
         List<PictureBox> listaBotoes = new List<PictureBox>();
         int indiceSelecionado = 0;
+
         public PrimeiraTelaJogo()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-
             this.WindowState = FormWindowState.Maximized;
             this.Load += PrimeiraTelaJogo_Load;
         }
@@ -36,17 +43,13 @@ namespace JogoCorridaWinFormsApp
                         }
 
                         pic.BorderStyle = BorderStyle.None;
-
                         pic.Paint += Botao_Paint;
                         pic.Click += Botao_Click;
-
                         listaBotoes.Add(pic);
                     }
                 }
-
                 listaBotoes = listaBotoes.OrderBy(p => p.Top).ToList();
             }
-
             AtualizarBordaVisual();
         }
 
@@ -63,15 +66,17 @@ namespace JogoCorridaWinFormsApp
                     Color.DarkRed, 4, ButtonBorderStyle.Solid);
             }
         }
+
         private void AtualizarBordaVisual()
         {
             if (listaBotoes.Count == 0) return;
 
             foreach (var pic in listaBotoes)
             {
-                pic.Invalidate(); 
+                pic.Invalidate();
             }
         }
+
         protected override void OnLayout(LayoutEventArgs levent)
         {
             base.OnLayout(levent);
@@ -108,7 +113,7 @@ namespace JogoCorridaWinFormsApp
                 ConfirmarSelecao(listaBotoes[indiceSelecionado]);
                 return true;
             }
-            else if (keyData == Keys.Escape) 
+            else if (keyData == Keys.Escape)
             {
                 Application.Exit();
                 return true;
@@ -116,6 +121,7 @@ namespace JogoCorridaWinFormsApp
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
         private void Botao_Click(object sender, EventArgs e)
         {
             PictureBox clicado = sender as PictureBox;
@@ -129,14 +135,12 @@ namespace JogoCorridaWinFormsApp
             if (selecionado.Name == "picInicio")
             {
                 TelaEscolhaJogoCorrida telaSelecao = new TelaEscolhaJogoCorrida();
-                telaSelecao.Show();
-                this.Hide();
+                TrocarDeTela(telaSelecao);
             }
             else if (selecionado.Name == "picEstatisticas")
             {
                 TelaEstatisticaJogoCorrida telaSelecao = new TelaEstatisticaJogoCorrida();
-                telaSelecao.Show();
-                this.Hide();
+                TrocarDeTela(telaSelecao);
             }
             else if (selecionado.Name == "picSair")
             {
@@ -146,9 +150,24 @@ namespace JogoCorridaWinFormsApp
 
         private void PicSair_Click(object sender, EventArgs e)
         {
-            // Encerra completamente o jogo
             Application.Exit();
         }
 
+        // SISTEMA DE TRANSIÇÃO SUAVE (Tela preta de arcade)
+        private void TrocarDeTela(Form proximaTela)
+        {
+            proximaTela.Show(); // Abre a tela nova por cima
+
+            // Espera 100 milissegundos antes de esconder a tela velha
+            System.Windows.Forms.Timer timerTransicao = new System.Windows.Forms.Timer();
+            timerTransicao.Interval = 100;
+            timerTransicao.Tick += (s, args) =>
+            {
+                this.Hide(); // Esconde a tela antiga silenciosamente por baixo
+                timerTransicao.Stop();
+                timerTransicao.Dispose();
+            };
+            timerTransicao.Start();
+        }
     }
 }

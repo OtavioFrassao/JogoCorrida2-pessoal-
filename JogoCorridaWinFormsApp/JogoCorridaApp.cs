@@ -11,9 +11,17 @@ namespace JogoCorridaWinFormsApp
         List<PictureBox> pictureBoxes = [];
         int faixaAtual = 1;
         DateTime tempoInicioJogo;
-        public FormJogoCorrida()
+
+        private readonly bool isMultiplayer;
+        private readonly TipoCenario cenarioSelecionado;
+        public FormJogoCorrida(bool modoMultiplayer, TipoCenario cenario)
         {
             InitializeComponent();
+
+            isMultiplayer = modoMultiplayer;
+            cenarioSelecionado = cenario;
+
+            CarregarImagemCenario();
 
             this.DoubleBuffered = true;
 
@@ -162,6 +170,39 @@ namespace JogoCorridaWinFormsApp
             else if (jogo.Vidas == 2) TextoVidas.Text = "Vidas: ♥♥♡";
             else if (jogo.Vidas == 1) TextoVidas.Text = "Vidas: ♥♡♡";
             else TextoVidas.Text = "Vidas: ♡♡♡";
+        }
+
+        private void CarregarImagemCenario()
+        {
+            Image imagemEscolhida;
+
+            if (cenarioSelecionado == TipoCenario.Areas_Rochosas)
+            {
+                imagemEscolhida = isMultiplayer
+                    ? Properties.Resources.cenario1multgif
+                    : Properties.Resources.cenario1gif;
+            }
+            else if (cenarioSelecionado == TipoCenario.Alem_Do_Mundo)
+            {
+                imagemEscolhida = isMultiplayer
+                    ? Properties.Resources.cenario2multgif
+                    : Properties.Resources.cenario2gif;
+            }
+            else if (cenarioSelecionado == TipoCenario.Terras_Desconhecidas)
+            {
+                imagemEscolhida = isMultiplayer
+                    ? Properties.Resources.cenario3multgif
+                    : Properties.Resources.cenario3gif;
+            }
+            else
+            {
+                imagemEscolhida = isMultiplayer
+                    ? Properties.Resources.cenario4multgif
+                    : Properties.Resources.cenario4gif;
+            }
+
+            this.BackgroundImage = imagemEscolhida;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }

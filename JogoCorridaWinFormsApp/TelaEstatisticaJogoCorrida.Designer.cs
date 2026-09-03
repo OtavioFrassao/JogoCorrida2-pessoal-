@@ -30,16 +30,16 @@
         {
             panelPrincipal3 = new Panel();
             panel1 = new Panel();
+            picSair = new PictureBox();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             picLogo = new PictureBox();
-            picSair = new PictureBox();
             panelPrincipal3.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picSair).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picSair).BeginInit();
             SuspendLayout();
             // 
             // panelPrincipal3
@@ -62,6 +62,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1304, 604);
             panel1.TabIndex = 3;
+            // 
+            // picSair
+            // 
+            picSair.BackgroundImage = Properties.Resources.picSair;
+            picSair.BackgroundImageLayout = ImageLayout.Stretch;
+            picSair.Location = new Point(1158, 12);
+            picSair.Name = "picSair";
+            picSair.Size = new Size(125, 54);
+            picSair.TabIndex = 44;
+            picSair.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -95,20 +105,11 @@
             picLogo.TabIndex = 2;
             picLogo.TabStop = false;
             // 
-            // picSair
-            // 
-            picSair.BackgroundImage = Properties.Resources.picSair;
-            picSair.BackgroundImageLayout = ImageLayout.Stretch;
-            picSair.Location = new Point(1158, 12);
-            picSair.Name = "picSair";
-            picSair.Size = new Size(125, 54);
-            picSair.TabIndex = 44;
-            picSair.TabStop = false;
-            // 
             // TelaEstatisticaJogoCorrida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = Properties.Resources.FundoStreetCars;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1328, 628);
@@ -118,10 +119,10 @@
             Text = "TelaEstatisticaJogoCorrida";
             panelPrincipal3.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picSair).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picSair).EndInit();
             ResumeLayout(false);
         }
 
