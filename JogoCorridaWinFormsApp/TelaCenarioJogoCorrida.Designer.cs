@@ -66,7 +66,7 @@
             panelPrincipal4.Controls.Add(picSair);
             panelPrincipal4.Controls.Add(picAleatorio);
             panelPrincipal4.Controls.Add(lblAleatorio);
-            panelPrincipal4.Location = new Point(12, -80);
+            panelPrincipal4.Location = new Point(12, -60);
             panelPrincipal4.Name = "panelPrincipal4";
             panelPrincipal4.Size = new Size(1291, 681);
             panelPrincipal4.TabIndex = 0;
@@ -167,9 +167,9 @@
             // 
             // picSair
             // 
-            picSair.BackgroundImage = Properties.Resources.picSair;
+            picSair.BackgroundImage = Properties.Resources.picSair1;
             picSair.BackgroundImageLayout = ImageLayout.Stretch;
-            picSair.Location = new Point(1146, 5);
+            picSair.Location = new Point(1146, 40);
             picSair.Name = "picSair";
             picSair.Size = new Size(125, 54);
             picSair.TabIndex = 45;

@@ -45,9 +45,10 @@
             picLogo.BackColor = Color.Transparent;
             picLogo.BackgroundImage = Properties.Resources.LogoStreetCars;
             picLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            picLogo.Location = new Point(530, -15);
+            picLogo.Location = new Point(606, -19);
+            picLogo.Margin = new Padding(3, 4, 3, 4);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(395, 168);
+            picLogo.Size = new Size(451, 213);
             picLogo.TabIndex = 1;
             picLogo.TabStop = false;
             // 
@@ -58,19 +59,21 @@
             panelPrincipal2.Controls.Add(picEstatisticas);
             panelPrincipal2.Controls.Add(picInicio);
             panelPrincipal2.Controls.Add(picLogo);
-            panelPrincipal2.Location = new Point(3, 4);
+            panelPrincipal2.Location = new Point(3, 5);
+            panelPrincipal2.Margin = new Padding(3, 4, 3, 4);
             panelPrincipal2.Name = "panelPrincipal2";
-            panelPrincipal2.Size = new Size(1434, 635);
+            panelPrincipal2.Size = new Size(1639, 804);
             panelPrincipal2.TabIndex = 4;
             // 
             // picSair
             // 
             picSair.BackColor = Color.FromArgb(100, 0, 0, 0);
-            picSair.BackgroundImage = Properties.Resources.picSair;
+            picSair.BackgroundImage = Properties.Resources.picSair1;
             picSair.BackgroundImageLayout = ImageLayout.Stretch;
-            picSair.Location = new Point(600, 482);
+            picSair.Location = new Point(710, 619);
+            picSair.Margin = new Padding(3, 4, 3, 4);
             picSair.Name = "picSair";
-            picSair.Size = new Size(269, 114);
+            picSair.Size = new Size(257, 116);
             picSair.TabIndex = 44;
             picSair.TabStop = false;
             // 
@@ -79,9 +82,10 @@
             picEstatisticas.BackColor = Color.FromArgb(100, 0, 0, 0);
             picEstatisticas.BackgroundImage = Properties.Resources.picEstatisticas;
             picEstatisticas.BackgroundImageLayout = ImageLayout.Stretch;
-            picEstatisticas.Location = new Point(557, 335);
+            picEstatisticas.Location = new Point(637, 424);
+            picEstatisticas.Margin = new Padding(3, 4, 3, 4);
             picEstatisticas.Name = "picEstatisticas";
-            picEstatisticas.Size = new Size(350, 124);
+            picEstatisticas.Size = new Size(400, 157);
             picEstatisticas.TabIndex = 3;
             picEstatisticas.TabStop = false;
             // 
@@ -90,23 +94,25 @@
             picInicio.BackColor = Color.FromArgb(100, 0, 0, 0);
             picInicio.BackgroundImage = Properties.Resources.picInicio;
             picInicio.BackgroundImageLayout = ImageLayout.Stretch;
-            picInicio.Location = new Point(600, 208);
+            picInicio.Location = new Point(686, 263);
+            picInicio.Margin = new Padding(3, 4, 3, 4);
             picInicio.Name = "picInicio";
-            picInicio.Size = new Size(257, 97);
+            picInicio.Size = new Size(294, 123);
             picInicio.TabIndex = 2;
             picInicio.TabStop = false;
             // 
             // PrimeiraTelaJogo
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = Properties.Resources.FundoStreetCars;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1439, 641);
+            ClientSize = new Size(1645, 812);
             Controls.Add(panelPrincipal2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "PrimeiraTelaJogo";
             Text = "PrimeiraTelaJogo";
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();

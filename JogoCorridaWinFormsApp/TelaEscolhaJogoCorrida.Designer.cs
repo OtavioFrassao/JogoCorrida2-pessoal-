@@ -56,18 +56,20 @@
             panelPrincipal5.Controls.Add(picSingle);
             panelPrincipal5.Controls.Add(picSair);
             panelPrincipal5.Controls.Add(picLogo);
-            panelPrincipal5.Location = new Point(12, 12);
+            panelPrincipal5.Location = new Point(14, 15);
+            panelPrincipal5.Margin = new Padding(3, 4, 3, 4);
             panelPrincipal5.Name = "panelPrincipal5";
-            panelPrincipal5.Size = new Size(1336, 607);
+            panelPrincipal5.Size = new Size(1527, 769);
             panelPrincipal5.TabIndex = 0;
             // 
             // picMultimsg
             // 
             picMultimsg.BackgroundImage = Properties.Resources.picMultimsg;
             picMultimsg.BackgroundImageLayout = ImageLayout.Stretch;
-            picMultimsg.Location = new Point(864, 449);
+            picMultimsg.Location = new Point(987, 569);
+            picMultimsg.Margin = new Padding(3, 4, 3, 4);
             picMultimsg.Name = "picMultimsg";
-            picMultimsg.Size = new Size(175, 76);
+            picMultimsg.Size = new Size(200, 96);
             picMultimsg.TabIndex = 49;
             picMultimsg.TabStop = false;
             // 
@@ -75,9 +77,10 @@
             // 
             picSingmsg.BackgroundImage = Properties.Resources.picSingmsg;
             picSingmsg.BackgroundImageLayout = ImageLayout.Stretch;
-            picSingmsg.Location = new Point(251, 449);
+            picSingmsg.Location = new Point(287, 569);
+            picSingmsg.Margin = new Padding(3, 4, 3, 4);
             picSingmsg.Name = "picSingmsg";
-            picSingmsg.Size = new Size(169, 80);
+            picSingmsg.Size = new Size(193, 101);
             picSingmsg.TabIndex = 48;
             picSingmsg.TabStop = false;
             // 
@@ -85,9 +88,10 @@
             // 
             picModoDeJogo.BackgroundImage = Properties.Resources.picModoDeJogo;
             picModoDeJogo.BackgroundImageLayout = ImageLayout.Stretch;
-            picModoDeJogo.Location = new Point(508, 147);
+            picModoDeJogo.Location = new Point(581, 186);
+            picModoDeJogo.Margin = new Padding(3, 4, 3, 4);
             picModoDeJogo.Name = "picModoDeJogo";
-            picModoDeJogo.Size = new Size(321, 133);
+            picModoDeJogo.Size = new Size(367, 168);
             picModoDeJogo.TabIndex = 47;
             picModoDeJogo.TabStop = false;
             // 
@@ -95,9 +99,10 @@
             // 
             picMulti.BackgroundImage = Properties.Resources.picMultiplayer__2_;
             picMulti.BackgroundImageLayout = ImageLayout.Stretch;
-            picMulti.Location = new Point(789, 260);
+            picMulti.Location = new Point(902, 329);
+            picMulti.Margin = new Padding(3, 4, 3, 4);
             picMulti.Name = "picMulti";
-            picMulti.Size = new Size(318, 163);
+            picMulti.Size = new Size(363, 206);
             picMulti.TabIndex = 46;
             picMulti.TabStop = false;
             // 
@@ -105,19 +110,21 @@
             // 
             picSingle.BackgroundImage = Properties.Resources.picSingleplayer__2_;
             picSingle.BackgroundImageLayout = ImageLayout.Stretch;
-            picSingle.Location = new Point(251, 260);
+            picSingle.Location = new Point(287, 329);
+            picSingle.Margin = new Padding(3, 4, 3, 4);
             picSingle.Name = "picSingle";
-            picSingle.Size = new Size(169, 163);
+            picSingle.Size = new Size(193, 206);
             picSingle.TabIndex = 45;
             picSingle.TabStop = false;
             // 
             // picSair
             // 
-            picSair.BackgroundImage = Properties.Resources.picSair;
+            picSair.BackgroundImage = Properties.Resources.picSair1;
             picSair.BackgroundImageLayout = ImageLayout.Stretch;
-            picSair.Location = new Point(1188, 24);
+            picSair.Location = new Point(1358, 30);
+            picSair.Margin = new Padding(3, 4, 3, 4);
             picSair.Name = "picSair";
-            picSair.Size = new Size(125, 54);
+            picSair.Size = new Size(143, 68);
             picSair.TabIndex = 44;
             picSair.TabStop = false;
             // 
@@ -126,23 +133,25 @@
             picLogo.BackColor = Color.Transparent;
             picLogo.BackgroundImage = Properties.Resources.LogoStreetCars;
             picLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            picLogo.Location = new Point(473, -15);
+            picLogo.Location = new Point(541, -19);
+            picLogo.Margin = new Padding(3, 4, 3, 4);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(395, 168);
+            picLogo.Size = new Size(451, 213);
             picLogo.TabIndex = 1;
             picLogo.TabStop = false;
             // 
             // TelaEscolhaJogoCorrida
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = Properties.Resources.FundoStreetCars;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1360, 631);
+            ClientSize = new Size(1554, 799);
             Controls.Add(panelPrincipal5);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TelaEscolhaJogoCorrida";
             Text = "TelaEscolhaJogoCorrida";
             panelPrincipal5.ResumeLayout(false);

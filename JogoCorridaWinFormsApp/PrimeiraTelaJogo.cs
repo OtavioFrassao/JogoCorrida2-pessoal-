@@ -31,6 +31,7 @@ namespace JogoCorridaWinFormsApp
 
         private void PrimeiraTelaJogo_Load(object sender, EventArgs e)
         {
+            GerenciadorMusica.TocarFundo("fundoJogo.mp3");
             if (panelPrincipal2 != null)
             {
                 foreach (Control controle in panelPrincipal2.Controls)

@@ -47,9 +47,10 @@
             panelPrincipal3.BackColor = Color.Transparent;
             panelPrincipal3.Controls.Add(panel1);
             panelPrincipal3.Controls.Add(picLogo);
-            panelPrincipal3.Location = new Point(12, 12);
+            panelPrincipal3.Location = new Point(14, 15);
+            panelPrincipal3.Margin = new Padding(3, 4, 3, 4);
             panelPrincipal3.Name = "panelPrincipal3";
-            panelPrincipal3.Size = new Size(1304, 604);
+            panelPrincipal3.Size = new Size(1490, 765);
             panelPrincipal3.TabIndex = 0;
             // 
             // panel1
@@ -58,18 +59,20 @@
             panel1.Controls.Add(picSair);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(pictureBox2);
-            panel1.Location = new Point(8, 8);
+            panel1.Location = new Point(9, 10);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1304, 604);
+            panel1.Size = new Size(1490, 765);
             panel1.TabIndex = 3;
             // 
             // picSair
             // 
-            picSair.BackgroundImage = Properties.Resources.picSair;
+            picSair.BackgroundImage = Properties.Resources.picSair1;
             picSair.BackgroundImageLayout = ImageLayout.Stretch;
-            picSair.Location = new Point(1158, 12);
+            picSair.Location = new Point(1323, 15);
+            picSair.Margin = new Padding(3, 4, 3, 4);
             picSair.Name = "picSair";
-            picSair.Size = new Size(125, 54);
+            picSair.Size = new Size(143, 68);
             picSair.TabIndex = 44;
             picSair.TabStop = false;
             // 
@@ -78,9 +81,10 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Properties.Resources.LogoStreetCars;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(456, -15);
+            pictureBox1.Location = new Point(521, -19);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(395, 168);
+            pictureBox1.Size = new Size(451, 213);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
@@ -88,9 +92,10 @@
             // 
             pictureBox2.BackgroundImage = Properties.Resources.EstatisticaImagem1;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(140, 86);
+            pictureBox2.Location = new Point(160, 109);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1036, 592);
+            pictureBox2.Size = new Size(1184, 750);
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
@@ -99,22 +104,24 @@
             picLogo.BackColor = Color.Transparent;
             picLogo.BackgroundImage = Properties.Resources.LogoStreetCars;
             picLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            picLogo.Location = new Point(456, -15);
+            picLogo.Location = new Point(521, -19);
+            picLogo.Margin = new Padding(3, 4, 3, 4);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(395, 168);
+            picLogo.Size = new Size(451, 213);
             picLogo.TabIndex = 2;
             picLogo.TabStop = false;
             // 
             // TelaEstatisticaJogoCorrida
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = Properties.Resources.FundoStreetCars;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1328, 628);
+            ClientSize = new Size(1518, 795);
             Controls.Add(panelPrincipal3);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TelaEstatisticaJogoCorrida";
             Text = "TelaEstatisticaJogoCorrida";
             panelPrincipal3.ResumeLayout(false);
