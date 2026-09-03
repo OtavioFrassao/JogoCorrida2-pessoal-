@@ -29,6 +29,8 @@ namespace JogoCorridaWinFormsApp
         System.Diagnostics.Stopwatch cronometroRoleta = new System.Diagnostics.Stopwatch();
         bool bordaAcesa = true;
         System.Media.SoundPlayer somRoleta = new System.Media.SoundPlayer(Properties.Resources.roleta_normal);
+        System.Media.SoundPlayer somClick = new System.Media.SoundPlayer(Properties.Resources.som_click);
+
 
         private readonly bool isMultiplayer;
 
@@ -53,6 +55,7 @@ namespace JogoCorridaWinFormsApp
             CarregarMiniaturasCenarios();
 
             somRoleta.LoadAsync();
+            somClick.LoadAsync();
             if (picSair != null) picSair.Click += PicSair_Click;
 
             if (panelPrincipal4 != null)
@@ -142,6 +145,7 @@ namespace JogoCorridaWinFormsApp
             if (telaTravada) return;
             PictureBox clicado = sender as PictureBox;
             indiceSelecionado = listaCenarios.IndexOf(clicado);
+            somClick.Play();
             AtualizarBordaVisual();
             ConfirmarSelecao(clicado);
         }

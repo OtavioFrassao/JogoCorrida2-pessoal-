@@ -45,9 +45,10 @@
             picCarro.BackColor = Color.Transparent;
             picCarro.BackgroundImage = Properties.Resources.picCarro;
             picCarro.BackgroundImageLayout = ImageLayout.Stretch;
-            picCarro.Location = new Point(251, 398);
+            picCarro.Location = new Point(287, 504);
+            picCarro.Margin = new Padding(3, 4, 3, 4);
             picCarro.Name = "picCarro";
-            picCarro.Size = new Size(92, 101);
+            picCarro.Size = new Size(105, 128);
             picCarro.TabIndex = 0;
             picCarro.TabStop = false;
             // 
@@ -57,7 +58,7 @@
             TextoVidas.BackColor = Color.Transparent;
             TextoVidas.Font = new Font("Segoe UI", 15F);
             TextoVidas.ForeColor = SystemColors.ActiveCaptionText;
-            TextoVidas.Location = new Point(1, 21);
+            TextoVidas.Location = new Point(1, 27);
             TextoVidas.Name = "TextoVidas";
             TextoVidas.Size = new Size(68, 28);
             TextoVidas.TabIndex = 1;
@@ -69,7 +70,7 @@
             TextoTempo.BackColor = Color.Transparent;
             TextoTempo.Font = new Font("Segoe UI", 15F);
             TextoTempo.ForeColor = SystemColors.ActiveCaptionText;
-            TextoTempo.Location = new Point(899, 32);
+            TextoTempo.Location = new Point(1027, 41);
             TextoTempo.Name = "TextoTempo";
             TextoTempo.Size = new Size(75, 28);
             TextoTempo.TabIndex = 2;
@@ -77,15 +78,17 @@
             // 
             // FormJogoCorrida
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.pista4faixas;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(971, 575);
+            ClientSize = new Size(1110, 728);
             Controls.Add(TextoTempo);
             Controls.Add(TextoVidas);
             Controls.Add(picCarro);
             ForeColor = SystemColors.ControlLight;
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormJogoCorrida";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "JogoCorrida - IFSP";

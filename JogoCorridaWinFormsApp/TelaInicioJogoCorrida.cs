@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq; // Obrigatório para ordenar a navegação do teclado
 using System.Windows.Forms;
 
+
 namespace JogoCorridaWinFormsApp
 {
     
@@ -24,7 +25,8 @@ namespace JogoCorridaWinFormsApp
         bool telaTravada = false;
 
         System.Windows.Forms.Timer timerRoleta = new System.Windows.Forms.Timer();
-        int ticksRoleta = 0;
+        
+        int passosRestantes = 0;
 
         System.Diagnostics.Stopwatch cronometroRoleta = new System.Diagnostics.Stopwatch();
         PictureBox personagemVencedor = null;
@@ -243,13 +245,13 @@ namespace JogoCorridaWinFormsApp
             somRoleta.Play();
 
             cronometroRoleta.Restart();
-            timerRoleta.Interval = 40;
+            timerRoleta.Interval = 40; //velocidade de incio rapida
             timerRoleta.Start();
         }
 
         private void TimerRoleta_Tick(object sender, EventArgs e)
         {
-            ticksRoleta++;
+            passosRestantes--;
 
             do
             {
@@ -261,17 +263,32 @@ namespace JogoCorridaWinFormsApp
 
             long tempoPassado = cronometroRoleta.ElapsedMilliseconds;
 
-            if (tempoPassado > 6500) timerRoleta.Interval = 100; // Aos 7 seg freia
-            if (tempoPassado > 7800) timerRoleta.Interval = 300; // Aos 8.5 seg freia mais
-            if (tempoPassado > 9300) timerRoleta.Interval = 450; //parando
+            int distancia = 0;
+            int tempIndice = indiceSelecionado;
 
-            // Só para a roleta se estiver em cima do vencedor sorteado
-            if (tempoPassado >= 9500 && listaPersonagens[indiceSelecionado] == personagemVencedor)
+            while (listaPersonagens[tempIndice] != personagemVencedor)
             {
-                timerRoleta.Stop();
-                cronometroRoleta.Stop();
+                tempIndice++;
+                if (tempIndice >= listaPersonagens.Count) tempIndice = 0;
+                if (listaPersonagens[tempIndice].Name == "picAleatorio" || (isMultiplayer && jogadorAtual == 2 && listaPersonagens[tempIndice] == personagemP1)) continue;
+                distancia++;
+            }
 
-                IniciarTransicao(listaPersonagens[indiceSelecionado]);
+            if (tempoPassado > 7500)
+            {
+                if (distancia > 10) timerRoleta.Interval = 40; // Continua voando para tirar o atraso
+                else if (distancia > 8) timerRoleta.Interval = 80;  // Faltam 10 casas: começa a frear
+                else if (distancia > 6) timerRoleta.Interval = 190;
+                else if (distancia > 4) timerRoleta.Interval = 320;
+                else if (distancia > 2) timerRoleta.Interval = 550;
+                else if (distancia > 0) timerRoleta.Interval = 800; // Faltam 2 casas: quase parando
+                else if (distancia == 0)
+                {
+                    // Chegou exatamente no vencedor perto dos 11 segundos
+                    timerRoleta.Stop();
+                    cronometroRoleta.Stop();
+                    IniciarTransicao(listaPersonagens[indiceSelecionado]);
+                }
             }
         }
 
