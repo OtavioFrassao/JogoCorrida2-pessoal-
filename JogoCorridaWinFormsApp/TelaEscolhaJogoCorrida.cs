@@ -24,6 +24,9 @@ namespace JogoCorridaWinFormsApp
 
         List<PictureBox> listaBotoes = new List<PictureBox>();
         int indiceSelecionado = 0;
+
+        System.Media.SoundPlayer somClick = new System.Media.SoundPlayer(Properties.Resources.som_click);
+
         public TelaEscolhaJogoCorrida()
         {
             InitializeComponent();
@@ -35,6 +38,8 @@ namespace JogoCorridaWinFormsApp
 
         private void TelaEscolhaJogoCorrida_Load(object sender, EventArgs e)
         {
+            somClick.LoadAsync();
+
             if (panelPrincipal5 != null)
             {
                 foreach (Control controle in panelPrincipal5.Controls)
@@ -122,6 +127,8 @@ namespace JogoCorridaWinFormsApp
                 indiceSelecionado = listaBotoes.IndexOf(clicado);
                 AtualizarBordaVisual();
                 ConfirmarSelecao(clicado);
+                somClick.Play();
+
             }
         }
         private void ConfirmarSelecao(PictureBox selecionado)

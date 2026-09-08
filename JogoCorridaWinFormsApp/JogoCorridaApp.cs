@@ -12,14 +12,16 @@ namespace JogoCorridaWinFormsApp
         int faixaAtual = 1;
         DateTime tempoInicioJogo;
 
-        private readonly bool isMultiplayer;
-        private readonly TipoCenario cenarioSelecionado;
-        public FormJogoCorrida(bool modoMultiplayer, TipoCenario cenario)
+        bool isMultiplayer;
+        TipoCenario cenarioSelecionado;
+        int nivelDificuldade;
+        public FormJogoCorrida(bool modoMultiplayer, TipoCenario cenario, int nivel)
         {
             InitializeComponent();
 
             isMultiplayer = modoMultiplayer;
             cenarioSelecionado = cenario;
+            nivelDificuldade = nivel;
 
             CarregarImagemCenario();
 

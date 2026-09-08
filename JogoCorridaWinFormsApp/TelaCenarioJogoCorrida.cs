@@ -92,7 +92,9 @@ namespace JogoCorridaWinFormsApp
             if (listaCenarios.Count > 0 && pic == listaCenarios[indiceSelecionado] && bordaAcesa)
             {
                 ControlPaint.DrawBorder(e.Graphics, pic.ClientRectangle, Color.Yellow, 4, ButtonBorderStyle.Solid,
-                    Color.Yellow, 4, ButtonBorderStyle.Solid, Color.Yellow, 4, ButtonBorderStyle.Solid, Color.Yellow, 4, ButtonBorderStyle.Solid);
+                    Color.Yellow, 4, ButtonBorderStyle.Solid, 
+                    Color.Yellow, 4, ButtonBorderStyle.Solid, 
+                    Color.Yellow, 4, ButtonBorderStyle.Solid);
             }
         }
 
@@ -220,13 +222,10 @@ namespace JogoCorridaWinFormsApp
             {
                 timerEspera.Stop();
 
-                // FINALMENTE VAI PARA O JOGO PRINCIPAL!
                 TipoCenario cenarioSelecionado = (TipoCenario)cenarioEscolhido.Tag;
 
-                FormJogoCorrida jogoFinal =
-                    new FormJogoCorrida(isMultiplayer, cenarioSelecionado);
-
-                TrocarDeTela(jogoFinal);
+                TelaNivelJogoCorrida telaNiveis = new TelaNivelJogoCorrida(isMultiplayer, cenarioSelecionado);
+                TrocarDeTela(telaNiveis);
             };
             timerEspera.Start();
         }
